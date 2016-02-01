@@ -1,4 +1,4 @@
-![SMTB - Semantic UI Bootstrap](http://smtb.cbl-web.com/images/logo-big.png)
+[![SMTB - Semantic UI Bootstrap](http://smtb.cbl-web.com/images/logo-big.png)](http://smtb.cbl-web.com/)
 
 # SMTB - Semantic UI Bootstrap
 ## Introdution
@@ -7,7 +7,7 @@ SMTB is a Bootstrap theme and component collections inspired by Semantic UI. It 
 ## Components Quick Overview
 [http://smtb.cbl-web.com/overview.html](http://smtb.cbl-web.com/overview.html)
 
-![Preview](http://smtb.cbl-web.com/images/preview.jpg)
+[![Preview](http://smtb.cbl-web.com/images/preview.jpg)](http://smtb.cbl-web.com/)
 
 ## Components Introduction & Documentation
 [http://smtb.cbl-web.com/component.html](http://smtb.cbl-web.com/component.html)
