@@ -31,7 +31,7 @@ Label, Card, Divider and Sidebar can be used as a plugin independently.
 ## Installation
 SMTB is just a theme of bootstrap, so you need to include bootstrap 3 before SMTB css.
 
-```
+```html
 <link rel="stylesheet" href="your_path/bootstrap.min.css">
 <link rel="stylesheet" href="your_path/smt-bootstrap.css">
 ```
