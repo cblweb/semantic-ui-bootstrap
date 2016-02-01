@@ -7,7 +7,7 @@ SMTB is a Bootstrap theme and component collections inspired by Semantic UI. It 
 ## Components Quick Overview
 [http://smtb.cbl-web.com/overview.html](http://smtb.cbl-web.com/overview.html)
 
-![Preview](http://smtb.cbl-web.com/imgaes/pewview.jpg)
+![Preview](http://smtb.cbl-web.com/imgaes/preview.jpg)
 
 ## Components Introduction & Documentation
 [http://smtb.cbl-web.com/component.html](http://smtb.cbl-web.com/component.html)
