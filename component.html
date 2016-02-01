@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>{{lang.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/highlight-default.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+    <script>
+      if(window.location.hostname=='localhost') {
+        document.write('<link rel="stylesheet" href="../semantic-ui-bootstrap/css/smt-bootstrap.css">');
+      } else {
+        document.write('<link rel="stylesheet" href="https://raw.githubusercontent.com/cblweb/semantic-ui-bootstrap/master/css/smt-bootstrap.css">');
+      }
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav" data-offset="200">
+
+    <div id="header"></div>
+
+    <div class="bs-docs-header" id="content" tabindex="-1">
+        <div class="container">
+            <h1>{{lang.componentNdocs}}</h1>
+            <p ng-bind-html-unsafe="lang.docsSubject"></p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" role="complementary">
+                <nav id="sidenav" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" data-spy="affix" data-offset-top="280">
+                    <ul class="nav bs-docs-sidenav">
+                        <li><a href="#button">{{lang.Button}}</a>
+                            <ul class="nav">
+                                <li><a href="#button-default">{{lang.DefaultButton}}</a></li>
+                                <li><a href="#button-icon">{{lang.Withicon}}</a></li>
+                                <li><a href="#button-inverted">{{lang.Inverted}}</a></li>
+                                <li><a href="#button-circular">{{lang.Circular}}</a></li>
+                                <li><a href="#button-dropdown">{{lang.ButtonGroupDropdown}}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#dropdown">{{lang.Dropdown}}</a>
+                            <ul class="nav">
+                                <li><a href="#dropdown-default">{{lang.DefaultDropdown}}</a></li>
+                                <li><a href="#dropdown-hover">{{lang.ShowOnMouseover}}</a></li>
+                                <li><a href="#dropdown-submenu">{{lang.Submenu}}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#tabs">{{lang.Tabs}}</a></li>
+                        <li><a href="#alert">{{lang.Alert}}</a></li>
+                        <li><a href="#reveal">{{lang.Reveal}}</a>
+                            <ul class="nav">
+                                <li><a href="#reveal-move">{{lang.Move}}</a></li>
+                                <li><a href="#reveal-rotate">{{lang.Rotate}}</a></li>
+                                <li><a href="#reveal-fade">{{lang.Fade}}</a></li>
+                                <li><a href="#reveal-dim">{{lang.DimBlur}}</a></li>
+                                <li><a href="#reveal-circular">{{lang.Circularblock}}</a></li>
+                                <li><a href="#reveal-disablehover">{{lang.Disablehover}}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#label">{{lang.Label}}</a>
+                            <ul class="nav">
+                                <li><a href="#label-user">{{lang.UserLabel}}</a></li>
+                                <li><a href="#label-tag">{{lang.TagLabel}}</a></li>
+                                <li><a href="#label-ribbon">{{lang.Ribbon}}</a></li>
+                                <li><a href="#label-attached">{{lang.Attached}}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#card">{{lang.Card}}</a></li>
+                        <li><a href="#divider">{{lang.Divider}}</a>
+                            <ul class="nav">
+                                <li><a href="#horizontal-divider">{{lang.HorizontalDivider}}</a></li>
+                                <li><a href="#button-divider">{{lang.ButtonDivider}}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#sidebar">{{lang.Sidebar}}</a>
+                            <ul class="nav">
+                                <li><a href="#sidebar-body">{{lang.BodySidebar}}</a></li>
+                                <li><a href="#sidebar-inner">{{lang.InnerSidebar}}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#less">{{lang.UsingLess}}</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                <div class="bs-docs-section">
+
+                    <h1 id="button" class="page-header">{{lang.Button}}</h1>
+                    <h2 id="button-default">{{lang.DefaultButton}}</h2>
+                    <div class="bs-example">
+                        <a href="#" class="btn btn-default">Default</a>
+                        <a href="#" class="btn btn-primary">Primary</a>
+                        <a href="#" class="btn btn-success">Success</a>
+                        <a href="#" class="btn btn-info">Info</a>
+                        <a href="#" class="btn btn-warning">Warning</a>
+                        <a href="#" class="btn btn-danger">Danger</a>
+                        <a href="#" class="btn btn-link">Link</a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a href="#" class="btn btn-default">Default&lt;/a>
+&lt;a href="#" class="btn btn-primary">Primary&lt;/a>
+&lt;a href="#" class="btn btn-success">Success&lt;/a>
+&lt;a href="#" class="btn btn-info">Info&lt;/a>
+&lt;a href="#" class="btn btn-warning">Warning&lt;/a>
+&lt;a href="#" class="btn btn-danger">Danger&lt;/a>
+&lt;a href="#" class="btn btn-link">Link&lt;/a>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="button-icon">{{lang.Withicon}}</h2>
+                    <p ng-bind-html-unsafe="lang.withIconDesc"></p>
+                    <div class="bs-example">
+                        <a href="#" class="btn btn-success">Allow<i class="fa fa-check btn-icon-right"></i></a>
+                        <a href="#" class="btn btn-danger"><i class="fa fa-times btn-icon-left"></i>Disable</a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a href="#" class="btn btn-success">Allow&lt;i class="fa fa-check btn-icon-right">&lt;/i>&lt;/a>
+&lt;a href="#" class="btn btn-danger">&lt;i class="fa fa-times btn-icon-left">&lt;/i>Disable&lt;/a>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="button-inverted">{{lang.Inverted}}</h2>
+                    <p ng-bind-html-unsafe="lang.invertedDesc"></p>
+                    <div class="bs-example">
+                        <a href="#" class="btn btn-inverted btn-default">Default</a>
+                        <a href="#" class="btn btn-inverted btn-primary">Primary</a>
+                        <a href="#" class="btn btn-inverted btn-success">Success</a>
+                        <a href="#" class="btn btn-inverted btn-info">Info</a>
+                        <a href="#" class="btn btn-inverted btn-warning">Warning</a>
+                        <a href="#" class="btn btn-inverted btn-danger">Danger</a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a href="#" class="btn btn-inverted btn-default">Default&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-primary">Primary&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-success">Success&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-info">Info&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-warning">Warning&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-danger">Danger&lt;/a>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.invertedDescBold"></p>
+                    <div class="bs-example">
+                        <a href="#" class="btn btn-inverted btn-bold btn-default">Default</a>
+                        <a href="#" class="btn btn-inverted btn-bold btn-primary">Primary</a>
+                        <a href="#" class="btn btn-inverted btn-bold btn-success">Success</a>
+                        <a href="#" class="btn btn-inverted btn-bold btn-info">Info</a>
+                        <a href="#" class="btn btn-inverted btn-bold btn-warning">Warning</a>
+                        <a href="#" class="btn btn-inverted btn-bold btn-danger">Danger</a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a href="#" class="btn btn-inverted btn-bold btn-default">Default&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-bold btn-primary">Primary&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-bold btn-success">Success&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-bold btn-info">Info&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-bold btn-warning">Warning&lt;/a>
+&lt;a href="#" class="btn btn-inverted btn-bold btn-danger">Danger&lt;/a>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.invertedDescWhite"></p>
+                    <div class="bs-example">
+                        <nav class="navbar navbar-inverse bs-component">
+                            <div class="navbar-form">
+                                <a href="#" class="btn btn-inverted-white btn-primary">Primary</a>
+                                <a href="#" class="btn btn-inverted-white btn-success">Success</a>
+                                <a href="#" class="btn btn-inverted-white btn-info">Info</a>
+                                <a href="#" class="btn btn-inverted-white btn-warning">Warning</a>
+                                <a href="#" class="btn btn-inverted-white btn-danger">Danger</a>
+                            </div>
+                            <div class="navbar-form">
+                                <a href="#" class="btn btn-inverted-white-fill btn-primary">Primary</a>
+                                <a href="#" class="btn btn-inverted-white-fill btn-success">Success</a>
+                                <a href="#" class="btn btn-inverted-white-fill btn-info">Info</a>
+                                <a href="#" class="btn btn-inverted-white-fill btn-warning">Warning</a>
+                                <a href="#" class="btn btn-inverted-white-fill btn-danger">Danger</a>
+                            </div>
+                        </nav>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a href="#" class="btn btn-inverted-white btn-primary">Primary&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white btn-success">Success&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white btn-info">Info&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white btn-warning">Warning&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white btn-danger">Danger&lt;/a>
+
+&lt;a href="#" class="btn btn-inverted-white-fill btn-primary">Primary&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white-fill btn-success">Success&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white-fill btn-info">Info&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white-fill btn-warning">Warning&lt;/a>
+&lt;a href="#" class="btn btn-inverted-white-fill btn-danger">Danger&lt;/a>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="button-circular">{{lang.Circular}}</h2>
+                    <p ng-bind-html-unsafe="lang.circularButtonDesc"></p>
+                    <div class="bs-example">
+                        <a href="#" class="btn btn-circular btn-default"><i class="fa fa-pencil"></i></a>
+                        <a href="#" class="btn btn-circular btn-primary"><i class="fa fa-user"></i></a>
+                        <a href="#" class="btn btn-circular btn-success"><i class="fa fa-bug"></i></a>
+                        <a href="#" class="btn btn-circular btn-info"><i class="fa fa-plane"></i></a>
+                        <a href="#" class="btn btn-circular btn-warning"><i class="fa fa-database"></i></a>
+                        <a href="#" class="btn btn-circular btn-danger"><i class="fa fa-cog"></i></a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a href="#" class="btn btn-circular btn-default">&lt;i class="fa fa-pencil">&lt;/i>&lt;/a>
+&lt;a href="#" class="btn btn-circular btn-primary">&lt;i class="fa fa-user">&lt;/i>&lt;/a>
+&lt;a href="#" class="btn btn-circular btn-success">&lt;i class="fa fa-bug">&lt;/i>&lt;/a>
+&lt;a href="#" class="btn btn-circular btn-info">&lt;i class="fa fa-plane">&lt;/i>&lt;/a>
+&lt;a href="#" class="btn btn-circular btn-warning">&lt;i class="fa fa-database">&lt;/i>&lt;/a>
+&lt;a href="#" class="btn btn-circular btn-danger">&lt;i class="fa fa-cog">&lt;/i>&lt;/a>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="button-dropdown">{{lang.ButtonGroupDropdown}}</h2>
+                    <p ng-bind-html-unsafe="lang.buttonDropdownDesc"></p>
+                    <div class="bs-example">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-default">Default</a>
+                            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-primary">Primary</a>
+                            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-success">Success</a>
+                            <a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-info">Info</a>
+                            <a href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-warning">Warning</a>
+                            <a href="#" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="btn-group">
+    &lt;a href="#" class="btn btn-primary">Primary&lt;/a>
+    &lt;a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">&lt;span class="caret">&lt;/span>&lt;/a>
+    &lt;ul class="dropdown-menu">
+        &lt;li>&lt;a href="#">Action&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Another action&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Something else here&lt;/a>&lt;/li>
+        &lt;li class="divider">&lt;/li>
+        &lt;li>&lt;a href="#">Separated link&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="dropdown" class="page-header">{{lang.Dropdown}}</h1>
+                    <h2 id="dropdown-default">{{lang.DefaultDropdown}}</h2>
+                    <div class="bs-example">
+                        <div>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            &nbsp;
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="dropdown">
+    &lt;button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        Dropdown
+        &lt;span class="caret">&lt;/span>
+    &lt;/button>
+    &lt;ul class="dropdown-menu">
+        &lt;li>&lt;a href="#">Action&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Another action&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Something else here&lt;/a>&lt;/li>
+        &lt;li role="separator" class="divider">&lt;/li>
+        &lt;li>&lt;a href="#">Separated link&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <h2 id="dropdown-hover">{{lang.ShowOnMouseover}}</h2>
+                    <p ng-bind-html-unsafe="lang.dropdownHoverDesc"></p>
+                    <div class="bs-example">
+                        <div>
+                            <div class="dropdown dropdown-hover" style="display:inline-block">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Dropdown Hover
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            &nbsp;
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="dropdown dropdown-hover">
+    &lt;button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        Dropdown
+        &lt;span class="caret">&lt;/span>
+    &lt;/button>
+    &lt;ul class="dropdown-menu">
+        &lt;li>&lt;a href="#">Action&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Another action&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Something else here&lt;/a>&lt;/li>
+        &lt;li role="separator" class="divider">&lt;/li>
+        &lt;li>&lt;a href="#">Separated link&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <h2 id="dropdown-submenu">{{lang.Submenu}}</h2>
+                    <div class="bs-example">
+                        <div>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Dropdown With Submenu
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li class="dropdown dropdown-submenu">
+                                        <a href="#">Submenu</span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">One more separated link</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            &nbsp;
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="dropdown">
+    &lt;button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        Dropdown
+        &lt;span class="caret">&lt;/span>
+    &lt;/button>
+    &lt;ul class="dropdown-menu">
+        &lt;li>&lt;a href="#">Action&lt;/a>&lt;/li>
+        &lt;li class="dropdown dropdown-submenu">
+            &lt;a href="#">Submenu&lt;/span>&lt;/a>
+            &lt;ul class="dropdown-menu" role="menu">
+                &lt;li>&lt;a href="#">Action&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Another action&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Something else here&lt;/a>&lt;/li>
+                &lt;li class="divider">&lt;/li>
+                &lt;li>&lt;a href="#">Separated link&lt;/a>&lt;/li>
+                &lt;li class="divider">&lt;/li>
+                &lt;li>&lt;a href="#">One more separated link&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/li>
+        &lt;li>&lt;a href="#">Something else here&lt;/a>&lt;/li>
+        &lt;li role="separator" class="divider">&lt;/li>
+        &lt;li>&lt;a href="#">Separated link&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="tabs" class="page-header">{{lang.Tabs}}</h1>
+                    <h2>{{lang.DefaultTabs}}</h2>
+                    <div class="bs-example">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">Home</a></li>
+                            <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                            <li class="disabled"><a>Disabled</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="home">
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                            </div>
+                            <div class="tab-pane fade" id="profile">
+                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                            </div>
+                            <div class="tab-pane fade" id="dropdown1">
+                                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+                            </div>
+                            <div class="tab-pane fade" id="dropdown2">
+                                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;ul class="nav nav-tabs">
+    &lt;li class="active">&lt;a href="#home" data-toggle="tab" aria-expanded="true">Home&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#profile" data-toggle="tab">Profile&lt;/a>&lt;/li>
+    &lt;li class="disabled">&lt;a>Disabled&lt;/a>&lt;/li>
+    &lt;li class="dropdown">
+        &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown &lt;span class="caret">&lt;/span>&lt;/a>
+        &lt;ul class="dropdown-menu">
+            &lt;li>&lt;a href="#dropdown1" data-toggle="tab">Action&lt;/a>&lt;/li>
+            &lt;li class="divider">&lt;/li>
+            &lt;li>&lt;a href="#dropdown2" data-toggle="tab">Another action&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/li>
+&lt;/ul>
+&lt;div id="myTabContent" class="tab-content">
+    &lt;div class="tab-pane fade active in" id="home">
+        ...Home...
+    &lt;/div>
+    &lt;div class="tab-pane fade" id="profile">
+        ...Profile...
+    &lt;/div>
+    &lt;div class="tab-pane fade" id="dropdown1">
+        ...Dropdown1...
+    &lt;/div>
+    &lt;div class="tab-pane fade" id="dropdown2">
+        ...Dropdown2...
+    &lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2>{{lang.MaterialTabs}}</h2>
+                    <p ng-bind-html-unsafe="lang.materialTabsDesc"></p>
+                    <div class="bs-example">
+                        <ul class="nav nav-tabs tabs-material">
+                            <li class="active"><a href="#tab1" data-toggle="tab">Tab 1</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Tab 2</a></li>
+                            <li><a href="#tab3" data-toggle="tab">Tab 3</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="tab1">
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                            </div>
+                            <div class="tab-pane fade" id="tab2">
+                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                            </div>
+                            <div class="tab-pane fade" id="tab3">
+                                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;ul class="nav nav-tabs tabs-material">
+    &lt;li class="active">&lt;a href="#tab1" data-toggle="tab">Tab 1&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#tab2" data-toggle="tab">Tab 2&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#tab3" data-toggle="tab">Tab 3&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div id="myTabContent" class="tab-content">
+    &lt;div class="tab-pane fade active in" id="tab1">
+        ...Tab 1...
+    &lt;/div>
+    &lt;div class="tab-pane fade" id="tab2">
+        ...Tab 2...
+    &lt;/div>
+    &lt;div class="tab-pane fade" id="tab3">
+        ...Tab 3...
+    &lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="alert" class="page-header">{{lang.Alert}}</h1>
+                    <h2>{{lang.DefaultAlert}}</h2>
+                    <div class="bs-example">
+                        <div class="alert alert-dismissible alert-primary">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-info">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-warning">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="alert alert-dismissible alert-primary">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-info">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-success">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-danger">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-warning">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <p ng-bind-html-unsafe="lang.darkAlertDesc"></p>
+                    <div class="bs-example">
+                        <div class="alert alert-dismissible alert-dark alert-primary">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-dark alert-info">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-dark alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-dark alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                        <div class="alert alert-dismissible alert-dark alert-warning">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh Yeah!</strong> <a href="#" class="alert-link">SMTB</a> is a great bootstrap color theme.
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="alert alert-dismissible alert-dark alert-primary">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-dark alert-info">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-dark alert-success">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-dark alert-danger">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+&lt;div class="alert alert-dismissible alert-dark alert-warning">
+    &lt;button type="button" class="close" data-dismiss="alert">&times;&lt;/button>
+    &lt;strong>Oh Yeah!&lt;/strong> &lt;a href="#" class="alert-link">SMTB&lt;/a> is a great bootstrap color theme.
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="reveal" class="page-header">{{lang.Reveal}}</h1>
+                    <p ng-bind-html-unsafe="lang.revealDesc"></p>
+                    <h2 id="reveal-move">{{lang.Move}}</h2>
+                    <p ng-bind-html-unsafe="lang.revealLeftDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-move">
+                            <img class="reveal-show" src="images/avatar/big/elliot.jpg">
+                            <img class="reveal-hide" src="images/avatar/big/jenny.jpg">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-move">
+    &lt;img class="reveal-show" src="images/avatar/big/elliot.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/jenny.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.revealRightDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-move-right">
+                            <img class="reveal-show" src="images/avatar/big/jenny.jpg">
+                            <img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-move-right">
+    &lt;img class="reveal-show" src="images/avatar/big/jenny.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.revealUpDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-move-up">
+                            <img class="reveal-show" src="images/avatar/big/steve.jpg">
+                            <img class="reveal-hide" src="images/avatar/big/stevie.jpg">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-move-up">
+    &lt;img class="reveal-show" src="images/avatar/big/steve.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/stevie.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.revealDownDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-move-down">
+                            <img class="reveal-show" src="images/avatar/big/stevie.jpg">
+                            <img class="reveal-hide" src="images/avatar/big/steve.jpg">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-move-down">
+    &lt;img class="reveal-show" src="images/avatar/big/stevie.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/steve.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.revealNoLeaveDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-move-up reveal-no-leave">
+                            <img class="reveal-show" src="images/avatar/big/veronika.jpg">
+                            <img class="reveal-hide" src="images/avatar/big/steve.jpg">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-move-up reveal-no-leave">
+    &lt;img class="reveal-show" src="images/avatar/big/veronika.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/steve.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="reveal-rotate">{{lang.Rotate}}</h2>
+                    <p ng-bind-html-unsafe="lang.rotateLeftDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-rotate">
+                            <img class="reveal-show" src="images/avatar/big/elliot.jpg">
+                            <img class="reveal-hide" src="images/avatar/big/jenny.jpg">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-rotate">
+    &lt;img class="reveal-show" src="images/avatar/big/elliot.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/jenny.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.rotateRightDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-rotate-right">
+                            <img class="reveal-show" src="images/avatar/big/jenny.jpg">
+                            <img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-rotate-right">
+    &lt;img class="reveal-show" src="images/avatar/big/jenny.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="reveal-fade">{{lang.Fade}}</h2>
+                    <p ng-bind-html-unsafe="lang.revealFadeDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-fade">
+                            <img class="reveal-show" src="images/avatar/big/molly.png">
+                            <img class="reveal-hide" src="images/avatar/big/elyse.png">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-fade">
+    &lt;img class="reveal-show" src="images/avatar/big/molly.png">
+    &lt;img class="reveal-hide" src="images/avatar/big/elyse.png">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="reveal-dim">{{lang.DimBlur}}</h2>
+                    <p ng-bind-html-unsafe="lang.revealDimDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-dim">
+                          <img class="reveal-show" src="images/avatar/big/elyse.png">
+                          <div class="reveal-hide reveal-content">
+                            <div class="reveal-center">
+                              <span>
+                                <a class="btn btn-white-inverted-fill btn-warning">Add Friend</a>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-dim">
+    &lt;img class="reveal-show" src="images/avatar/big/elyse.png">
+    &lt;div class="reveal-hide reveal-content">
+        &lt;div class="reveal-center">
+            &lt;span>
+                &lt;a class="btn btn-white-inverted-fill btn-warning">Add Friend&lt;/a>
+            &lt;/span>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.revealDimWhiteDesc"></p>
+                    <div class="bs-example">
+                        <div class="reveal-dim reveal-dim-white">
+                          <img class="reveal-show" src="images/avatar/big/veronika.jpg">
+                          <div class="reveal-hide reveal-content">
+                            <div class="reveal-center">
+                              <span>
+                                <a class="btn btn-inverted btn-bold btn-info">Add Friend</a>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-dim reveal-dim-white">
+    &lt;img class="reveal-show" src="images/avatar/big/veronika.jpg">
+    &lt;div class="reveal-hide reveal-content">
+        &lt;div class="reveal-center">
+            &lt;span>
+                &lt;a class="btn btn-inverted btn-bold btn-info">Add Friend&lt;/a>
+            &lt;/span>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="reveal-circular">{{lang.Circularblock}}</h2>
+                    <p ng-bind-html-unsafe="lang.revealCircularDesc"></p>
+                    <div class="bs-example">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="reveal-move reveal-circular">
+                                    <img class="reveal-show" src="images/avatar/big/jenny.jpg">
+                                    <img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="reveal-rotate reveal-circular">
+                                    <img class="reveal-show" src="images/avatar/big/stevie.jpg">
+                                    <img class="reveal-hide" src="images/avatar/big/steve.jpg">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="reveal-fade reveal-circular">
+                                    <img class="reveal-show" src="images/avatar/big/veronika.jpg">
+                                    <img class="reveal-hide" src="images/avatar/big/helen.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="reveal-move reveal-circular">
+    &lt;img class="reveal-show" src="images/avatar/big/jenny.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+&lt;/div>
+
+&lt;div class="reveal-rotate reveal-circular">
+    &lt;img class="reveal-show" src="images/avatar/big/stevie.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/steve.jpg">
+&lt;/div>
+
+&lt;div class="reveal-fade reveal-circular">
+    &lt;img class="reveal-show" src="images/avatar/big/veronika.jpg">
+    &lt;img class="reveal-hide" src="images/avatar/big/helen.jpg">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="reveal-disablehover">{{lang.DisableEffectOnMouseover}}</h2>
+                    <p ng-bind-html-unsafe="lang.DisableHoverDesc"></p>
+                    <div class="bs-example">
+                        <a class="btn btn-primary" onclick="$('#control-reveal-by-js').toggleClass('active')">{{lang.ToggleActive}}</a>
+                        <div class="reveal-move reveal-no-hover" id="control-reveal-by-js">
+                            <img class="reveal-show" src="images/avatar/big/molly.png">
+                            <img class="reveal-hide" src="images/avatar/big/elyse.png">
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a class="btn btn-primary" onclick="$('#control-reveal-by-js').toggleClass('active')">{{lang.ToggleActive}}&lt;/a>
+&lt;div class="reveal-move reveal-no-hover" id="control-reveal-by-js">
+    &lt;img class="reveal-show" src="images/avatar/big/molly.png">
+    &lt;img class="reveal-hide" src="images/avatar/big/elyse.png">
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="label" class="page-header">{{lang.Label}}</h1>
+                    <h2 id="label-normal">{{lang.DefaultLabel}}</h2>
+                    <div class="bs-example">
+                        <span class="label label-default">Default</span>
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                        <span class="label label-info">Info</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;span class="label label-default">Default&lt;/span>
+&lt;span class="label label-primary">Primary&lt;/span>
+&lt;span class="label label-success">Success&lt;/span>
+&lt;span class="label label-warning">Warning&lt;/span>
+&lt;span class="label label-danger">Danger&lt;/span>
+&lt;span class="label label-info">Info&lt;/span>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="label-user">{{lang.UserLabel}}</h2>
+                    <p ng-bind-html-unsafe="lang.userLabelDesc"></p>
+                    <div class="bs-example">
+                        <span class="label label-default label-image">
+                            <img src="images/avatar/small/stevie.jpg">
+                            Stevie
+                        </span>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;span class="label label-default label-image">
+    &lt;img src="images/avatar/small/stevie.jpg">
+    Stevie
+&lt;/span>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.labelDetailDesc"></p>
+                    <div class="bs-example">
+                        <a class="label label-danger label-image">
+                            <img src="images/avatar/small/jenny.jpg">
+                            Jenny
+                            <span class="label-detail">Developer</span>
+                        </a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a class="label label-danger label-image">
+    &lt;img src="images/avatar/small/jenny.jpg">
+    Jenny
+    &lt;span class="label-detail">Developer&lt;/span>
+&lt;/a>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.labelIconDesc"></p>
+                    <div class="bs-example">
+                        <span class="label label-default label-image">
+                            <img src="images/avatar/small/elliot.jpg">
+                            elliot
+                            <a class="label-icon fa fa-times"></a>
+                        </span>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;span class="label label-default label-image">
+    &lt;img src="images/avatar/small/elliot.jpg">
+    elliot
+    &lt;a class="label-icon fa fa-times">&lt;/a>
+&lt;/span>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="label-tag">{{lang.TagLabel}}</h2>
+                    <p ng-bind-html-unsafe="lang.tabLabelDesc"></p>
+                    <div class="bs-example">
+                        <span class="label label-default label-tag">jQuery</span>
+                        <span class="label label-info label-tag">Bootstrap</span>
+                        <span class="label label-success label-tag">Sematic UI</span>
+                        <span class="label label-primary label-tag">PHP</span>
+                        <span class="label label-danger label-tag">MySQL</span>
+                        <span class="label label-warning label-tag">angularJS</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;span class="label label-default label-tag">jQuery&lt;/span>
+&lt;span class="label label-info label-tag">Bootstrap&lt;/span>
+&lt;span class="label label-success label-tag">Sematic UI&lt;/span>
+&lt;span class="label label-primary label-tag">PHP&lt;/span>
+&lt;span class="label label-danger label-tag">MySQL&lt;/span>
+&lt;span class="label label-warning label-tag">angularJS&lt;/span>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="label-ribbon">{{lang.Ribbon}}</h2>
+                    <p ng-bind-html-unsafe="lang.labelRibbonDesc"></p>
+                    <div class="bs-example">
+                        <div class="well" style="margin:0 30px;">
+                            <span class="label label-primary label-ribbon-left">Great</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.
+                            <span class="label label-success label-ribbon-right">Excellent</span>
+                            Donec vel libero nec risus gravida luctus non eu nunc. Mauris ut urna lacus. Sed consequat, sem vel fringilla rutrum, lacus neque luctus urna, id lobortis erat orci ac nisl.
+                            <span class="label label-warning label-ribbon-left">Great</span>Quisque lectus tellus, tincidunt a turpis et, placerat feugiat orci. Nam posuere egestas lacus nec sagittis. Fusce sed blandit elit, non consequat neque.
+                            <span class="label label-info label-ribbon-right">Excellent</span>Aliquam erat volutpat. Aliquam ac quam consectetur, vulputate eros nec, egestas erat. Cras scelerisque nunc mollis mattis sodales.</p>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="well">
+    &lt;span class="label label-primary label-ribbon-left">Great&lt;/span>
+    &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.
+    &lt;span class="label label-success label-ribbon-right">Excellent&lt;/span>
+    Donec vel libero nec risus gravida luctus non eu nunc. Mauris ut urna lacus. Sed consequat, sem vel fringilla rutrum, lacus neque luctus urna, id lobortis erat orci ac nisl.
+    &lt;span class="label label-warning label-ribbon-left">Great&lt;/span>Quisque lectus tellus, tincidunt a turpis et, placerat feugiat orci. Nam posuere egestas lacus nec sagittis. Fusce sed blandit elit, non consequat neque.
+    &lt;span class="label label-info label-ribbon-right">Excellent&lt;/span>Aliquam erat volutpat. Aliquam ac quam consectetur, vulputate eros nec, egestas erat. Cras scelerisque nunc mollis mattis sodales.&lt;/p>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.labelRibbonOnCardDesc"></p>
+                    <div class="bs-example">
+                        <div class="row" style="margin:0 30px;">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <span class="label label-danger label-ribbon-left">Great</span>
+                                        <img src="images/avatar/big/matthew.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <span class="label label-warning label-ribbon-right">Excellent</span>
+                                        <img src="images/avatar/big/elyse.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="card">
+    &lt;div class="card-image">
+        &lt;span class="label label-danger label-ribbon-left">Great&lt;/span>
+        &lt;img src="images/avatar/big/matthew.png">
+    &lt;/div>
+&lt;/div>
+
+&lt;div class="card">
+    &lt;div class="card-image">
+        &lt;span class="label label-warning label-ribbon-right">Excellent&lt;/span>
+        &lt;img src="images/avatar/big/elyse.png">
+    &lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="label-attached">{{lang.Attached}}</h2>
+                    <p ng-bind-html-unsafe="lang.labelAttachedTopDesc"></p>
+                    <div class="bs-example">
+                        <div class="well">
+                            <span class="label label-default label-attached-top">Great</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.</p>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="well">
+    &lt;span class="label label-default label-attached-top">Great&lt;/span>
+    &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.&lt;/p>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.labelAttachedBottomDesc"></p>
+                    <div class="bs-example">
+                        <div class="well">
+                            <span class="label label-default label-attached-bottom">Great</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.</p>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="well">
+    &lt;span class="label label-default label-attached-bottom">Great&lt;/span>
+    &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.&lt;/p>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.labelAttachedCornerDesc"></p>
+                    <div class="bs-example">
+                        <div class="well">
+                            <span class="label label-default label-attached-top-left">Top-left</span>
+                            <span class="label label-default label-attached-top-right">Top-right</span>
+                            <span class="label label-default label-attached-bottom-left">Bottom-left</span>
+                            <span class="label label-default label-attached-bottom-right">Bottom-right</span>
+                            <p style="padding-top:10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.</p>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="well">
+    &lt;span class="label label-default label-attached-top-left">Top-left&lt;/span>
+    &lt;span class="label label-default label-attached-top-right">Top-right&lt;/span>
+    &lt;span class="label label-default label-attached-bottom-left">Bottom-left&lt;/span>
+    &lt;span class="label label-default label-attached-bottom-right">Bottom-right&lt;/span>
+    &lt;p style="padding-top:10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla odio et lectus cursus, eleifend ullamcorper libero molestie. Phasellus eleifend ipsum vel leo lobortis, vel ullamcorper libero blandit. Nullam vitae dignissim sem, vel varius justo.&lt;/p>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="card" class="page-header">{{lang.Card}}</h1>
+                    <p ng-bind-html-unsafe="lang.cardDesc"></p>
+                    <div class="bs-example">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="bs-component">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <img src="images/avatar/big/elliot.jpg">
+                                        </div>
+                                        <div class="card-content">
+                                            <a class="card-header">Elliot Fu</a>
+                                            <div class="card-meta">Joined at 2013</div>
+                                            <div class="card-description">Elliot is a great game player.</div>
+                                        </div>
+                                        <div class="card-extra card-content">
+                                            <a><i class="fa fa-user"></i> 22 Friends </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="bs-component">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <div class="pull-right">14h</div><img class="card-avatar card-image" src="images/avatar/big/steve.jpg"> Steve</div>
+                                        <div class="card-image">
+                                            <img src="images/image.png">
+                                        </div>
+                                        <div class="card-content">
+                                            <span class="pull-right"><i class="fa fa-heart"></i> 17 likes </span>
+                                            <i class="fa fa-comment"></i> 3 comments
+                                        </div>
+                                        <div class="card-extra card-content">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text" placeholder="Add comment...">
+                                                <div class="input-group-btn">
+                                                    <a class="btn btn-inverted btn-default"><i class="fa fa-paper-plane"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="bs-component">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <img class="pull-right card-image card-avatar" src="images/avatar/big/elliot.jpg">
+                                            <div class="card-header">Elliot Fu </div>
+                                            <div class="card-meta">Famous Singer</div>
+                                            <div class="card-description">How do you think about the performance of Elliot on today's show?</div>
+                                        </div>
+                                        <div class="card-extra card-content">
+                                            <div class="row-fluid card-btn">
+                                                <a class="col-xs-4 btn btn-inverted btn-primary">Great</a>
+                                                <a class="col-xs-4 btn btn-inverted btn-success">Good</a>
+                                                <a class="col-xs-4 btn btn-inverted btn-danger">Bad</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="row">
+    &lt;div class="col-sm-4">
+        &lt;div class="bs-component">
+            &lt;div class="card">
+                &lt;div class="card-image">
+                    &lt;img src="images/avatar/big/elliot.jpg">
+                &lt;/div>
+                &lt;div class="card-content">
+                    &lt;a class="card-header">Elliot Fu&lt;/a>
+                    &lt;div class="card-meta">Joined at 2013&lt;/div>
+                    &lt;div class="card-description">Elliot is a great game player.&lt;/div>
+                &lt;/div>
+                &lt;div class="card-extra card-content">
+                    &lt;a>&lt;i class="fa fa-user">&lt;/i> 22 Friends &lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-sm-4">
+        &lt;div class="bs-component">
+            &lt;div class="card">
+                &lt;div class="card-content">
+                    &lt;div class="pull-right">14h&lt;/div>&lt;img class="card-avatar card-image" src="images/avatar/big/steve.jpg"> Steve&lt;/div>
+                &lt;div class="card-image">
+                    &lt;img src="images/image.png">
+                &lt;/div>
+                &lt;div class="card-content">
+                    &lt;span class="pull-right">&lt;i class="fa fa-heart">&lt;/i> 17 likes &lt;/span>
+                    &lt;i class="fa fa-comment">&lt;/i> 3 comments
+                &lt;/div>
+                &lt;div class="card-extra card-content">
+                    &lt;div class="input-group">
+                        &lt;input class="form-control" type="text" placeholder="Add comment...">
+                        &lt;div class="input-group-btn">
+                            &lt;a class="btn btn-inverted btn-default">&lt;i class="fa fa-paper-plane">&lt;/i>&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-sm-4">
+        &lt;div class="bs-component">
+            &lt;div class="card">
+                &lt;div class="card-content">
+                    &lt;img class="pull-right card-image card-avatar" src="images/avatar/big/elliot.jpg">
+                    &lt;div class="card-header">Elliot Fu &lt;/div>
+                    &lt;div class="card-meta">Famous Singer&lt;/div>
+                    &lt;div class="card-description">How do you think about the performance of Elliot on today's show?&lt;/div>
+                &lt;/div>
+                &lt;div class="card-extra card-content">
+                    &lt;div class="row-fluid card-btn">
+                        &lt;a class="col-xs-4 btn btn-inverted btn-primary">Great&lt;/a>
+                        &lt;a class="col-xs-4 btn btn-inverted btn-success">Good&lt;/a>
+                        &lt;a class="col-xs-4 btn btn-inverted btn-danger">Bad&lt;/a>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    
+                    <h2>{{lang.CardLink}}</h2>
+                    <p ng-bind-html-unsafe="lang.cardLinkDesc"></p>
+                    <div class="bs-example">
+                        <div class="card card-link">
+                            <div class="card-image">
+                                <img src="images/avatar/big/matthew.png">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-header">Matt Giampietro</div>
+                                <div class="card-meta">Cofounder</div>
+                                <div class="card-description">Matthew is an interior designer living in New York. </div>
+                            </div>
+                            <div class="card-extra card-content">
+                                <span class="pull-right">Joined at 2013</span>
+                                <span><i class="fa fa-user"></i> 75 Friends</span>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="card card-link">
+    &lt;div class="card-image">
+        &lt;img src="images/avatar/big/matthew.png">
+    &lt;/div>
+    &lt;div class="card-content">
+        &lt;div class="card-header">Matt Giampietro&lt;/div>
+        &lt;div class="card-meta">Cofounder&lt;/div>
+        &lt;div class="card-description">Matthew is an interior designer living in New York. &lt;/div>
+    &lt;/div>
+    &lt;div class="card-extra card-content">
+        &lt;span class="pull-right">Joined at 2013&lt;/span>
+        &lt;span>&lt;i class="fa fa-user">&lt;/i> 75 Friends&lt;/span>
+    &lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2>{{lang.CardReveal}}</h2>
+                    <p ng-bind-html-unsafe="lang.cardRevealDesc"></p>
+                    <div class="bs-example">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h3>{{lang.RevealRotate}}</h3>
+                                <div class="bs-component">
+                                    <div class="card">
+                                        <div class="card-image reveal-rotate">
+                                            <img class="reveal-show" src="images/avatar/big/jenny.jpg">
+                                            <img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+                                        </div>
+                                        <div class="card-content">
+                                            <a class="card-header">Team Fu &amp; Hess</a>
+                                            <div class="card-meta">Formed at 2014</div>
+                                        </div>
+                                        <div class="card-extra card-content">
+                                            <a><i class="fa fa-users"></i> 2 Members </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <h3>{{lang.RevealDim}}</h3>
+                                <div class="bs-component">
+                                    <div class="card">
+                                        <div class="card-image reveal-dim">
+                                            <div class="reveal-hide reveal-content">
+                                                <div class="reveal-center">
+                                                    <span>
+                                                  <a class="btn btn-inverted btn-bold btn-primary">Add Friend</a>
+                                                </span>
+                                                </div>
+                                            </div>
+                                            <img class="reveal-show" src="images/avatar/big/elliot.jpg">
+                                        </div>
+                                        <div class="card-content">
+                                            <a class="card-header">Elliot</a>
+                                            <div class="card-meta">Joined at 2014</div>
+                                        </div>
+                                        <div class="card-extra card-content">
+                                            <a><i class="fa fa-users"></i> 2 Friends </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <h3>{{lang.RevealDimWhite}}</h3>
+                                <div class="bs-component">
+                                    <div class="card">
+                                        <div class="card-image reveal-dim reveal-dim-white">
+                                            <div class="reveal-hide reveal-content">
+                                                <div class="reveal-center">
+                                                    <span>
+                                                  <a class="btn btn-info">Add Friend</a>
+                                                </span>
+                                                </div>
+                                            </div>
+                                            <img class="reveal-show" src="images/avatar/big/elliot.jpg">
+                                        </div>
+                                        <div class="card-content">
+                                            <a class="card-header">Elliot</a>
+                                            <div class="card-meta">Joined at 2014</div>
+                                        </div>
+                                        <div class="card-extra card-content">
+                                            <a><i class="fa fa-users"></i> 2 Friends </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="card">
+    &lt;div class="card-image reveal-rotate">
+        &lt;img class="reveal-show" src="images/avatar/big/jenny.jpg">
+        &lt;img class="reveal-hide" src="images/avatar/big/elliot.jpg">
+    &lt;/div>
+    &lt;div class="card-content">
+        &lt;a class="card-header">Team Fu &amp; Hess&lt;/a>
+        &lt;div class="card-meta">Formed at 2014&lt;/div>
+    &lt;/div>
+    &lt;div class="card-extra card-content">
+        &lt;a>&lt;i class="fa fa-users">&lt;/i> 2 Members &lt;/a>
+    &lt;/div>
+&lt;/div>
+
+&lt;div class="card">
+    &lt;div class="card-image reveal-dim">
+        &lt;div class="reveal-hide reveal-content">
+            &lt;div class="reveal-center">
+                &lt;span>
+              &lt;a class="btn btn-inverted btn-bold btn-primary">Add Friend&lt;/a>
+            &lt;/span>
+            &lt;/div>
+        &lt;/div>
+        &lt;img class="reveal-show" src="images/avatar/big/elliot.jpg">
+    &lt;/div>
+    &lt;div class="card-content">
+        &lt;a class="card-header">Elliot&lt;/a>
+        &lt;div class="card-meta">Joined at 2014&lt;/div>
+    &lt;/div>
+    &lt;div class="card-extra card-content">
+        &lt;a>&lt;i class="fa fa-users">&lt;/i> 2 Friends &lt;/a>
+    &lt;/div>
+&lt;/div>
+
+&lt;div class="card">
+    &lt;div class="card-image reveal-dim reveal-dim-white">
+        &lt;div class="reveal-hide reveal-content">
+            &lt;div class="reveal-center">
+                &lt;span>
+              &lt;a class="btn btn-info">Add Friend&lt;/a>
+            &lt;/span>
+            &lt;/div>
+        &lt;/div>
+        &lt;img class="reveal-show" src="images/avatar/big/elliot.jpg">
+    &lt;/div>
+    &lt;div class="card-content">
+        &lt;a class="card-header">Elliot&lt;/a>
+        &lt;div class="card-meta">Joined at 2014&lt;/div>
+    &lt;/div>
+    &lt;div class="card-extra card-content">
+        &lt;a>&lt;i class="fa fa-users">&lt;/i> 2 Friends &lt;/a>
+    &lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="divider" class="page-header">{{lang.Divider}}</h1>
+                    <h2 id="horizontal-divider">{{lang.HorizontalDivider}}</h2>
+                    <p ng-bind-html-unsafe="lang.dividerDesc"></p>
+                    <div class="bs-example">
+                        <div class="well">
+                            anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                        <div class="bs-divider">{{lang.Or}}</div>
+                        <div class="well">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">&lt;div class="bs-divider">{{lang.Or}}&lt;/div></code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.titleDividerDesc"></p>
+                    <div class="bs-example">
+                        <div class="bs-divider"><i class="fa fa-star"></i> {{lang.dividerAsHeading}}</div>
+                        <div class="well">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">&lt;div class="bs-divider">&lt;i class="fa fa-star">&lt;/i> {{lang.dividerAsHeading}}&lt;/div></code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="button-divider">{{lang.ButtonDivider}}</h2>
+                    <p ng-bind-html-unsafe="lang.buttonDividerDesc"></p>
+                    <div class="bs-example">
+                        <div class="btn-group btn-divided">
+                            <a href="#" class="btn btn-lg btn-primary">Great</a>
+                            <i data-text="or"></i>
+                            <a href="#" class="btn btn-lg btn-info">General</a>
+                            <i data-text="or"></i>
+                            <a href="#" class="btn btn-lg btn-warning">Bad</a>
+                        </div>
+                        <div class="btn-group btn-divided">
+                            <a href="#" class="btn btn-success">Allow</a>
+                            <i data-text="或"></i>
+                            <a href="#" class="btn btn-danger">Disable</a>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="btn-group btn-divided">
+    &lt;a href="#" class="btn btn-lg btn-primary">Great&lt;/a>
+    &lt;i data-text="or">&lt;/i>
+    &lt;a href="#" class="btn btn-lg btn-info">General&lt;/a>
+    &lt;i data-text="or">&lt;/i>
+    &lt;a href="#" class="btn btn-lg btn-warning">Bad&lt;/a>
+&lt;/div>
+&lt;div class="btn-group btn-divided">
+    &lt;a href="#" class="btn btn-success">Allow&lt;/a>
+    &lt;i data-text="或">&lt;/i>
+    &lt;a href="#" class="btn btn-danger">Disable&lt;/a>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h1 id="sidebar" class="page-header">{{lang.Sidebar}}</h1>
+                    <div ng-bind-html-unsafe="lang.sidebarDesc"></div>
+                    <figure class="highlight">
+                        <pre>
+                            <code class="language-js" data-lang="js">$('.sidebar-overlay').on('click touchstart',function() {
+    $('.sidebar,.sidebar-container').removeClass('active'); $('body').removeClass('sidebar-active');
+});</code>
+                        </pre>
+                    </figure>
+                    <h2 id="sidebar-body">{{lang.BodySidebar}}</h2>
+                    <h3>HTML markup</h3>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;body>
+    &lt;div class="sidebar sidebar-right">
+        &lt;div class="sidebar-wrap">
+          &lt;div class="sidebar-subject">.....Your Subject.....&lt;/div>
+          &lt;ul>
+            &lt;li class="dropdown">&lt;a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 1&lt;/a>
+              &lt;ul class="dropdown-menu">
+                &lt;li>&lt;a href="#">Submenu 1&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Submenu 2&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Submenu 3&lt;/a>&lt;/li>
+              &lt;/ul>
+            &lt;/li>
+            &lt;li>
+              &lt;a href="#">Menu 2&lt;/a>
+              &lt;ul>
+                &lt;li>&lt;a href="#">Submenu 1&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Submenu 2&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Submenu 3&lt;/a>&lt;/li>
+              &lt;/ul>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="sidebar-overlay">&lt;/div>
+    .....Your content.....
+&lt;/body>
+</code>
+                        </pre>
+                    </figure>
+                    <div ng-bind-html-unsafe="lang.bodySidebarDesc"></div>
+                    <div class="bs-example">
+                        <a class="btn btn-default btn-inverted" onclick="$('body').toggleClass('sidebar-active').find('#body-sidebar-left').toggleClass('active');"><i class="fa fa-bars"></i> Body Left Sidebar</a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a class="btn btn-default btn-inverted" onclick="$('body').toggleClass('sidebar-active').find('#body-sidebar-left').toggleClass('active');">&lt;i class="fa fa-bars">&lt;/i> Body Left Sidebar&lt;/a>
+
+&lt;body>
+    &lt;div id="body-sidebar-left" class="sidebar">
+      &lt;div class="sidebar-wrap">
+        &lt;div class="sidebar-subject">&lt;img src="images/logo.png" height="38"> Semantic UI Bootstrap&lt;/div>
+        &lt;ul>
+          &lt;li>&lt;a href="#">Menu 1&lt;/a>&lt;/li>
+          &lt;li class="dropdown">
+            &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2&lt;/a>
+            &lt;ul class="dropdown-menu">
+              &lt;li>&lt;a href="#">Submenu 1&lt;/a>&lt;/li>
+              &lt;li>&lt;a href="#">Submenu 2&lt;/a>&lt;/li>
+              &lt;li>&lt;a href="#">Submenu 3&lt;/a>&lt;/li>
+            &lt;/ul>
+          &lt;/li>
+          &lt;li>&lt;a href="#">Menu 3&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#">Menu 4&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#">Menu 5&lt;/a>&lt;/li>
+        &lt;/ul>
+      &lt;/div>
+    &lt;/div>
+    &lt;div class="sidebar-overlay">&lt;/div>
+&lt;/body>
+</code>
+                        </pre>
+                    </figure>
+
+                    <div class="bs-example">
+                        <a class="btn btn-default btn-inverted" onclick="$('body').addClass('sidebar-active').find('#body-sidebar-right').toggleClass('active');">Body Right Sidebar <i class="fa fa-bars"></i></a>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;a class="btn btn-default btn-inverted" onclick="$('body').addClass('sidebar-active').find('#body-sidebar-right').toggleClass('active');">Body Right Sidebar &lt;i class="fa fa-bars">&lt;/i>&lt;/a>
+
+&lt;body>
+    &lt;div id="body-sidebar-right" class="sidebar sidebar-right">
+    &lt;div class="sidebar-wrap">
+      &lt;div class="sidebar-subject">&lt;img src="images/logo.png" height="38"> Semantic UI Bootstrap&lt;/div>
+      &lt;ul>
+        &lt;li>&lt;a href="#">Menu 1&lt;/a>&lt;/li>
+        &lt;li>
+          &lt;a href="#">Menu 2&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a href="#">Submenu 1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 3&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/li>
+        &lt;li>&lt;a href="#">Menu 3&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Menu 4&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Menu 5&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/div>
+    &lt;/div>
+    &lt;div class="sidebar-overlay">&lt;/div>
+&lt;/body>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h2 id="sidebar-inner">{{lang.InnerSidebar}}</h2>
+                    <h3>HTML markup</h3>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="sidebar-container">
+  &lt;div class="sidebar sidebar-right">
+    &lt;div class="sidebar-wrap">
+      &lt;div class="sidebar-subject">Your Subject&lt;/div>
+      &lt;ul>
+        &lt;li>&lt;a href="#">Menu 1&lt;/a>&lt;/li>
+        &lt;li class="dropdown">
+          &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2&lt;/a>
+          &lt;ul class="dropdown-menu">
+            &lt;li>&lt;a href="#">Submenu 1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 3&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/li>
+      &lt;/ul>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="sidebar-overlay">&lt;/div>
+  &lt;div class="sidebar-dim">.....Your Content.....&lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <div ng-bind-html-unsafe="lang.innerSidebarDesc"></div>
+                    <h3>{{lang.InnerSidebarLeft}}</h3>
+                    <div class="bs-example">
+                        <p>
+                          <a class="btn btn-default btn-inverted" onclick="$('#sidebar-left').toggleClass('active')"><i class="fa fa-bars"></i></a>
+                        </p>
+                        <div id="sidebar-left" class="sidebar-container" style="border:1px solid #DDD;">
+                          <div class="sidebar">
+                            <div class="sidebar-wrap">
+                              <div class="sidebar-subject"><img src="images/logo.png" height="38"> Semantic UI Bootstrap</div>
+                              <ul>
+                                <li><a href="#">Menu 1</a></li>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2</a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Submenu 1</a></li>
+                                    <li><a href="#">Submenu 2</a></li>
+                                    <li><a href="#">Submenu 3</a></li>
+                                  </ul>
+                                </li>
+                                <li><a href="#">Menu 3</a></li>
+                                <li><a href="#">Menu 4</a></li>
+                                <li><a href="#">Menu 5</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="sidebar-overlay"></div>
+                          <div class="sidebar-dim" style="padding:10px;max-height:328px;overflow-y:auto;">
+                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                            <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                            <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;p>
+  &lt;a class="btn btn-default btn-inverted" onclick="$('#sidebar-left').toggleClass('active')">&lt;i class="fa fa-bars">&lt;/i>&lt;/a>
+&lt;/p>
+&lt;div id="sidebar-left" class="sidebar-container" style="border:1px solid #DDD;">
+  &lt;div class="sidebar">
+    &lt;div class="sidebar-wrap">
+      &lt;div class="sidebar-subject">&lt;img src="images/logo.png" height="38"> Semantic UI Bootstrap&lt;/div>
+      &lt;ul>
+        &lt;li>&lt;a href="#">Menu 1&lt;/a>&lt;/li>
+        &lt;li class="dropdown">
+          &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2&lt;/a>
+          &lt;ul class="dropdown-menu">
+            &lt;li>&lt;a href="#">Submenu 1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 3&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/li>
+        &lt;li>&lt;a href="#">Menu 3&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Menu 4&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Menu 5&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="sidebar-overlay">&lt;/div>
+  &lt;div class="sidebar-dim">.....Content.....&lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+                    <h3>{{lang.InnerSidebarRight}}</h3>
+                    <div class="bs-example">
+                        <p>
+                          <a class="btn btn-default btn-inverted" onclick="$('#sidebar-right').toggleClass('active')"><i class="fa fa-bars"></i></a>
+                        </p>
+                        <div id="sidebar-right" class="sidebar-container sidebar-push" style="border:1px solid #DDD;">
+                          <div class="sidebar sidebar-right">
+                            <div class="sidebar-wrap">
+                              <div class="sidebar-subject"><img src="images/logo.png" height="38"> Semantic UI Bootstrap</div>
+                              <ul>
+                                <li><a href="#">Menu 1</a></li>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2</a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Submenu 1</a></li>
+                                    <li><a href="#">Submenu 2</a></li>
+                                    <li><a href="#">Submenu 3</a></li>
+                                  </ul>
+                                </li>
+                                <li><a href="#">Menu 3</a></li>
+                                <li><a href="#">Menu 4</a></li>
+                                <li><a href="#">Menu 5</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="sidebar-overlay"></div>
+                          <div class="sidebar-dim" style="padding:10px;max-height:328px;overflow-y:auto;">
+                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                            <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                            <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;p>
+  &lt;a class="btn btn-default btn-inverted" onclick="$('#sidebar-right').toggleClass('active')">&lt;i class="fa fa-bars">&lt;/i>&lt;/a>
+&lt;/p>
+&lt;div id="sidebar-right" class="sidebar-container sidebar-push" style="border:1px solid #DDD;">
+  &lt;div class="sidebar sidebar-right">
+    &lt;div class="sidebar-wrap">
+      &lt;div class="sidebar-subject">&lt;img src="images/logo.png" height="38"> Semantic UI Bootstrap&lt;/div>
+      &lt;ul>
+        &lt;li>&lt;a href="#">Menu 1&lt;/a>&lt;/li>
+        &lt;li class="dropdown">
+          &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2&lt;/a>
+          &lt;ul class="dropdown-menu">
+            &lt;li>&lt;a href="#">Submenu 1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Submenu 3&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/li>
+        &lt;li>&lt;a href="#">Menu 3&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Menu 4&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Menu 5&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="sidebar-overlay">&lt;/div>
+  &lt;div class="sidebar-dim">.....Content.....&lt;/div>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+
+
+
+
+
+                    <h1 id="less" class="page-header">{{lang.UsingLess}}</h1>
+                    <p ng-bind-html-unsafe="lang.usingLessDesc"></p>
+                    <h3>{{lang.BrandColor}}</h3>
+                    <table class="table table-bordered table-striped">
+                        <tr><td>@color-primary</td><td>Default: #3ac0ff</td></tr>
+                        <tr><td>@color-info</td><td>Default: #8a73ff</td></tr>
+                        <tr><td>@color-success</td><td>Default: #22be34</td></tr>
+                        <tr><td>@color-danger</td><td>Default: #d01919</td></tr>
+                        <tr><td>@color-warning</td><td>Default: #ff851b</td></tr>
+                    </table>
+                    <h3>{{lang.AlertColor}}</h3>
+                    <p ng-bind-html-unsafe="lang.alertColorDesc"></p>
+                    <table class="table table-bordered table-striped">
+                        <tr><td>@alert-color-primary</td><td>Default: #F8FFFF, #A9D5DE, #276f86</td></tr>
+                        <tr><td>@alert-color-info</td><td>Default: #F1EFFF, #CBC4FC, #6435C9</td></tr>
+                        <tr><td>@alert-color-success</td><td>Default: #FCFFF5, #A3C293, #2c662d</td></tr>
+                        <tr><td>@alert-color-danger</td><td>Default: #FFF6F6, #E0B4B4, #9F3A38</td></tr>
+                        <tr><td>@alert-color-warning</td><td>Default: #FFFAF3, #C9BA9B, #573a08</td></tr>
+                    </table>
+                    
+                    <p ng-bind-html-unsafe="lang.finalDesc"></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <div id="body-sidebar-left" class="sidebar">
+      <div class="sidebar-wrap">
+        <div class="sidebar-subject"><img src="images/logo.png" height="38"> Semantic UI Bootstrap</div>
+        <ul>
+          <li><a href="#">Menu 1</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Submenu 1</a></li>
+              <li><a href="#">Submenu 2</a></li>
+              <li><a href="#">Submenu 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Menu 3</a></li>
+          <li><a href="#">Menu 4</a></li>
+          <li><a href="#">Menu 5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-overlay"></div>
+
+    <div id="body-sidebar-right" class="sidebar sidebar-right">
+      <div class="sidebar-wrap">
+        <div class="sidebar-subject"><img src="images/logo.png" height="38"> Semantic UI Bootstrap</div>
+        <ul>
+          <li><a href="#">Menu 1</a></li>
+          <li>
+            <a href="#">Menu 2</a>
+            <ul>
+              <li><a href="#">Submenu 1</a></li>
+              <li><a href="#">Submenu 2</a></li>
+              <li><a href="#">Submenu 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Menu 3</a></li>
+          <li><a href="#">Menu 4</a></li>
+          <li><a href="#">Menu 5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-overlay"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+    <script type="text/javascript">
+    $.ajaxSetup({async:false});
+    $('#header').load('header.html');
+    $('#footer').load('footer.html');
+    </script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+    $('a[href=#]').attr('href','javascript:;');
+    $('.bs-docs-sidenav a').click(function(e) {
+        e.preventDefault();
+        $('body,html').animate({scrollTop:$($(this).attr('href')).offset().top-150});
+    });
+    $('.sidebar-overlay').on('click touchstart',function() { $('.sidebar,.sidebar-container').removeClass('active'); $('body').removeClass('sidebar-active'); });
+
+    if(window.location.hostname!='localhost') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-33825249-5', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    };
+    </script>
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+</html>

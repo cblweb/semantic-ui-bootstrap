@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>{{lang.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/highlight-default.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+    <script>
+      if(window.location.hostname=='localhost') {
+        document.write('<link rel="stylesheet" href="../semantic-ui-bootstrap/css/smt-bootstrap.css">');
+      } else {
+        document.write('<link rel="stylesheet" href="https://raw.githubusercontent.com/cblweb/semantic-ui-bootstrap/master/css/smt-bootstrap.css">');
+      }
+    </script>
+  </head>
+  <body id="home">
+
+    <div id="header"></div>
+
+    <main class="bs-docs-masthead" id="content" role="main" tabindex="-1">
+      <div class="container"> <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">SMTB</span>
+        <p class="lead" ng-bind-html-unsafe="lang.subject"></p>
+        <p>Version 3.0.0<br>({{lang.versionDesc}})</p>
+        <p class="lead">
+          <a href="https://github.com/cblweb/semantic-ui-bootstrap/archive/master.zip" class="btn btn-inverted-white-fill btn-danger btn-lg">{{lang.download}}</a>
+        </p>
+      </div>
+      <div id="footer"></div>
+    </main>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+    <script type="text/javascript">
+    $.ajaxSetup({async:false});
+    $('#header').load('header.html');
+    $('#footer').load('footer.html');
+    if(window.location.hostname!='localhost') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-33825249-5', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    };
+    </script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.js"></script>
+    <script src="js/lang.js"></script>
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+</html>
