@@ -1,0 +1,75 @@
+/*!
+ * # SMTB - Semantic UI Bootstrap
+ * Version v3.0.0
+ * http://github.com/cblweb/semantic-ui-bootstrap/
+ * Inspired by Semantic UI
+ *
+ * Copyright 2016 cbl-web.com
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@import url('../mixin.less');
+
+.sidebar { position: absolute; width: 250px; height: 100%; z-index: 10001; visibility: hidden;
+  body > & { position: fixed; top: 0; }
+  .sidebar-wrap { width: 100%; height: 100%; overflow-y: auto; .transform(translateX(-100%)); .transition(0.38s,ease,all); background-color: #222; color: #FFF; .box-shadow(0 2px 6px rgba(0,0,0,0.5));
+    .sidebar-subject { padding: 20px 15px; }
+    > ul > li { border-top: 1px solid rgba(255,255,255,0.08);
+      &:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
+      > a { text-decoration: none !important; color: #EEE;
+        &:hover { color: #FFF; }
+      }
+    }
+    ul { list-style: none; width: 100%; padding: 0; overflow: hidden; }
+    li a { color: #FFF; line-height: 1.5; padding: 10px 15px; display: block; }
+    a.dropdown-toggle:after {
+      display:block; float:right; width:0; height:0; margin-top:5px; margin-right:-5px; opacity: 0.3;
+      content:" "; border: 5px solid transparent; border-width:5px 5px 0 5px; border-top-color: #FFF;
+    }
+    a.dropdown-toggle:hover:after { opacity: 0.6; }
+    .dropdown.open > a.dropdown-toggle:after {
+      .transform(rotate(-180deg));
+    }
+    .dropdown-menu { position: static; float: none; border-radius: 0; background-color: transparent; display: none; margin: 0; border: 0; .box-shadow(none); }
+    li > ul > li {
+      > a { font-size: 0.85em; background-color: transparent; color: rgba(255,255,255,.5); padding-top: 0; padding-bottom: 6px; }
+      &:last-child > a { padding-bottom: 13px; }
+      &:hover > a { color: rgba(255,255,255,.8); }
+    }
+    .open > .dropdown-menu { display: block; }
+    .open, .active {
+      a:after {  }
+    }
+  }
+  &.sidebar-right { right: 0;
+    .sidebar-wrap { .transform(translateX(100%)); }
+  }
+  &.active, .sidebar-container.active > & { visibility: visible;
+    .sidebar-wrap {.transform(translateX(0));}
+    & + .sidebar-overlay{ visibility: visible;
+      &:after { opacity: 0.7; }
+      a { opacity: 1; }
+    }
+  }
+  body > & + .sidebar-overlay { position: fixed; }
+}
+.sidebar-overlay { visibility: hidden; position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 10000;
+  &:after { content: ""; position: absolute; width: 100%; height: 100%; background-color: #000; opacity: 0; .transition(0.38s,ease,all); }
+  a { position: absolute; left: 270px; top: 20px; width: 26px; height: 26px; cursor: pointer; z-index: 1; opacity: 0; .transition(0.5s,ease-in,opacity);
+    &:after, &:before { content: ""; display: block; height: 3px; background-color: #FFF; border-radius: 3px; width: 100%; position: relative; }
+    &:before { .transform(rotate(-45deg)); top: 10px; }
+    &:after { .transform(rotate(45deg)); top: 7px; }
+  }
+  .sidebar.sidebar-right + & a { left: auto; right: 270px; }
+}
+.sidebar-container { position: relative; overflow-x: hidden; overflow-y: auto; }
+.sidebar-container.active { overflow-y: hidden; }
+.sidebar-active { overflow: hidden; }
+.sidebar-push > .sidebar-dim { position: relative; .transition(0.38s,ease,all); .transform(translateX(0)); }
+.sidebar-container.sidebar-push.active > .sidebar ~ .sidebar-dim { width: 100%; height: 100%; .transform(translateX(250px)); }
+.sidebar-container.sidebar-push.active > .sidebar.sidebar-right ~ .sidebar-dim { .transform(translateX(-250px)); }
+
+
+.-each(@name) { }

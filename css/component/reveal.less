@@ -1,0 +1,89 @@
+/*!
+ * # SMTB - Semantic UI Bootstrap
+ * Version v3.0.0
+ * http://github.com/cblweb/semantic-ui-bootstrap/
+ * Inspired by Semantic UI
+ *
+ * Copyright 2016 cbl-web.com
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@import url('../mixin.less');
+
+[class*="reveal-move"],[class*="reveal-rotate"],[class*="reveal-fade"],[class*="reveal-dim"] { position: relative; overflow: hidden;
+	.reveal-show, .reveal-hide { width: 100%; .transition(0.5s,ease,all); }
+	.reveal-hide { position: absolute; left: 0; top: 0; z-index: 1; }
+	&.reveal-circular { border-radius: 50%;
+		.reveal-show, .reveal-hide { border-radius: 50%; overflow: hidden; }
+	}
+	.reveal-content { height: 100%;
+		.reveal-center { display: table; width: 100%; height: 100%; padding: 10px;
+		  > span { display: table-cell; vertical-align: middle; text-align: center; height: 100%; }
+		}
+	}
+}
+.reveal-move {
+	.reveal-show { .transform(translateX(0)); }
+	.reveal-hide { .transform(translateX(100%)); }
+	&:not(.reveal-no-hover):hover, &.active {
+		&:not(.reveal-no-leave) .reveal-show { .transform(translateX(-100%)); }
+		.reveal-hide { .transform(translateX(0)); }
+	}
+}
+.reveal-move-right {
+	.reveal-show { .transform(translateX(0)); }
+	.reveal-hide { .transform(translateX(-100%)); }
+	&:not(.reveal-no-hover):hover, &.active {
+		&:not(.reveal-no-leave) .reveal-show { .transform(translateX(100%)); }
+		.reveal-hide { .transform(translateX(0)); }
+	}
+}
+.reveal-move-up {
+	.reveal-show { .transform(translateY(0)); }
+	.reveal-hide { .transform(translateY(100%)); }
+	&:not(.reveal-no-hover):hover, &.active {
+		&:not(.reveal-no-leave) .reveal-show { .transform(translateY(-100%)); }
+		.reveal-hide { .transform(translateY(0)); }
+	}
+}
+.reveal-move-down {
+	.reveal-show { .transform(translateY(0)); }
+	.reveal-hide { .transform(translateY(-100%)); }
+	&:not(.reveal-no-hover):hover, &.active {
+		&:not(.reveal-no-leave) .reveal-show { .transform(translateY(100%)); }
+		.reveal-hide { .transform(translateY(0)); }
+	}
+}
+.reveal-rotate {
+	.reveal-hide { position: static; }
+	.reveal-show { position: absolute; left: 0; top: 0; z-index: 1; .transform(rotate(0)); .transform-origin(bottom left); }
+	&:not(.reveal-no-hover):hover, &.active {
+		.reveal-show { .transform(rotate(-110deg)); }
+	}
+}
+.reveal-rotate-right {
+	.reveal-hide { position: static; }
+	.reveal-show { position: absolute; left: 0; top: 0; z-index: 1; .transform(rotate(0)); .transform-origin(bottom right); }
+	&:not(.reveal-no-hover):hover, &.active {
+		.reveal-show { .transform(rotate(110deg)); }
+	}
+}
+.reveal-fade {
+  .reveal-hide { opacity: 0; background-color: #000; color: #FFF; }
+  &.reveal-fade-white .reveal-hide { background-color: #FFF; color: #333; }
+  &:not(.reveal-no-hover):hover, &.active {
+    .reveal-hide { opacity: 1; }
+  }
+}
+.reveal-dim {
+  .reveal-hide { opacity: 0; background-color: rgba(0,0,0,.3); color: #FFF; }
+  &.reveal-dim-white .reveal-hide { background-color: rgba(255,255,255,0.5); color: #333; }
+  &:not(.reveal-no-hover):hover, &.active {
+    .reveal-hide { opacity: 1; }
+    .reveal-show { -webkit-filter:blur(5px) grayscale(.7); filter:blur(5px) grayscale(.7); }
+  }
+}
+
+.-each(@name) { }

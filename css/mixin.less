@@ -1,0 +1,49 @@
+/*!
+ * # SMTB - Semantic UI Bootstrap
+ * Version v3.0.0
+ * http://github.com/cblweb/semantic-ui-bootstrap/
+ * Inspired by Semantic UI
+ *
+ * Copyright 2016 cbl-web.com
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+.radius(@r:10px) { border-radius: @r; }
+.box-shadow(@type: rgba(0,0,0,0.3) 0 0 8px) { box-shadow: @type; -moz-box-shadow: @type; -webkit-box-shadow: @type; -ms-box-shadow: @type; -o-box-shadow: @type; }
+.box-shadow(@type1,@type2) { box-shadow: @type1, @type2; -moz-box-shadow: @type1, @type2; -webkit-box-shadow: @type1, @type2; -ms-box-shadow: @type1, @type2; -o-box-shadow: @type1, @type2; }
+.text-shadow(@type) { text-shadow: @type; -webkit-text-shadow: @type; -moz-text-shadow: @type; -ms-text-shadow: @type; }
+.transition(@type:all,@duration:0.2s,@easing:cubic-bezier(0.635, 0.000, 0.415, 1)) { transition: @type @duration @easing; -webkit-transition: @type @duration @easing; -moz-transition: @type @duration @easing; }
+.transform(@type) { transform: @type; -webkit-transform: @type; -moz-transform: @type; -ms-transform: @type; }
+.transform-origin(@type) { transform-origin: @type; -moz-transform-origin: @type; -webkit-transform-origin: @type; -ms-transform-origin: @type; }
+.animation(@type) { animation: @type; -webkit-animation: @type; }
+.keyframes(@name, @rules) {
+    @-webkit-keyframes ~'@{name}' { @rules(); }
+    @-moz-keyframes ~'@{name}' { @rules(); }
+    @-o-keyframes ~'@{name}' { @rules(); }
+    @keyframes ~'@{name}' { @rules(); }
+}
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+@color-primary: #3ac0ff;
+@color-info: #8a73ff;
+@color-success: #22be34;
+@color-danger: #d01919;
+@color-warning: #ff851b;
+
+@alert-color-primary: #F8FFFF, #A9D5DE, #276f86; // [1] Background-color, [2] border-color, [3] font color
+@alert-color-info: #F1EFFF, #CBC4FC, #6435C9;
+@alert-color-success: #FCFFF5, #A3C293, #2c662d;
+@alert-color-danger: #FFF6F6, #E0B4B4, #9F3A38;
+@alert-color-warning: #FFFAF3, #C9BA9B, #573a08;
+
+@brand: primary,info,success,danger,warning;
+
+.for(@brand);

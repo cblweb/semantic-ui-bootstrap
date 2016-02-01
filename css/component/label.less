@@ -1,0 +1,77 @@
+/*!
+ * # SMTB - Semantic UI Bootstrap
+ * Version v3.0.0
+ * http://github.com/cblweb/semantic-ui-bootstrap/
+ * Inspired by Semantic UI
+ *
+ * Copyright 2016 cbl-web.com
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@import url('../mixin.less');
+
+ @label-radius: .25em;
+.label { display: inline-block; padding: 6px 6px 6px 6px; .transition(); overflow: hidden; position: relative;
+	.label-detail { margin: -6px -6px -6px 6px; padding: 6px; .transition(); }
+	img { display: inline-block; height: 26px; max-width: 100%; }
+	&.label-image > img:first-child { margin: -6px 6px -6px -6px; }
+	> .label-icon:last-child { padding-left: 6px; }
+	a { color: #FFF; cursor: pointer;
+		&:hover { color: #DDD; }
+	}
+	&.label-tag, .label-tag > & { padding-left: 11.3px; margin-left: 11.3px; overflow: visible;
+		&:before { content: ""; position: absolute; .transform(translateY(-50%) translateX(50%) rotate(-45deg)); border-top-left-radius: 3px; background-color: inherit; top: 50%; right: 100%; width: 16px; height: 16px; }
+		&:after { content: ""; position: absolute; .box-shadow(0 -1px 1px 0 rgba(0,0,0,.3)); background-color: #FFF; border-radius: 50%; width: 6px; height: 6px; top: 9px; left: -2px; }
+	}
+	&[class*="label-ribbon-"] { position: relative; overflow: visible; padding-left: 20px; padding-right: 20px;
+		&:before { border-color: transparent; border-style: solid; content: ""; width: 0; height: 0; position: absolute; top: 100%; }
+	}
+	&.label-ribbon-left { float: left; margin-left: -19px; left: -15px; border-radius: 0 @label-radius @label-radius 0;
+		&:before { border-width: 0 15px 10px 0; border-right-color: #333; left: 0; }
+	}
+	&.label-ribbon-right { float: right; margin-right: -19px; right: -15px; border-radius: @label-radius 0 0 @label-radius;
+		&:before { border-width: 0 0 10px 15px; border-left-color: #333; right: 0; }
+	}
+	&[class*="label-attached-"] { position: absolute; }
+	&.label-attached-top + :not([class*="label-attached-"]) { margin-top: 16px; }
+	&.label-attached-bottom + :not([class*="label-attached-"]) { margin-bottom: 16px; }
+	&.label-attached-top { top: 0; left: 0; width: 100%; border-radius: @label-radius @label-radius 0 0; }
+	&.label-attached-bottom { bottom: 0; left: 0; width: 100%; border-radius: 0 0 @label-radius @label-radius; }
+	&.label-attached-top-left { top: 0; left: 0; width: auto; border-radius: @label-radius 0 @label-radius 0; }
+	&.label-attached-top-right { top: 0; right: 0; width: auto; border-radius: 0 @label-radius 0 @label-radius; }
+	&.label-attached-bottom-left { bottom: 0; left: 0; width: auto; border-radius: 0 @label-radius 0 @label-radius; }
+	&.label-attached-bottom-right { bottom: 0; right: 0; width: auto; border-radius: @label-radius 0 @label-radius 0; }
+}
+.well-sm {
+	.label-ribbon-left { margin-left: -9px; }
+	.label-ribbon-right { margin-right: -9px; }
+}
+.well-lg {
+	.label-ribbon-left { margin-left: -24px; }
+	.label-ribbon-right { margin-right: -24px; }
+}
+.card-image {
+	.label-ribbon-left { position: absolute; margin-left: 0; top: 15px; }
+	.label-ribbon-right { position: absolute; margin-right: 0; top: 15px; }
+}
+.label-default { color: #555; background-color: #e8e8e8;
+	.label-detail { background-color: darken(#e8e8e8,8%); }
+	a { color: #888;
+		&:hover { color: #333; }
+	}
+}
+a.label-default:hover { background-color: darken(#e8e8e8,5%);
+	.label-detail { background-color: darken(#e8e8e8,15%); }
+}
+a.label { cursor: pointer; }
+.-each(@name) {
+	@this-color-name: 'color-@{name}';
+	.label.label-@{name} { background-color: @@this-color-name; color: #FFF;
+		.label-detail { background-color: darken(@@this-color-name,8%); }
+	}
+	a.label.label-@{name}:hover { background-color: darken(@@this-color-name,5%);
+		.label-detail { background-color: darken(@@this-color-name,15%); }
+	}
+}

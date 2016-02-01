@@ -1,0 +1,78 @@
+/*!
+ * # SMTB - Semantic UI Bootstrap
+ * Version v3.0.0
+ * http://github.com/cblweb/semantic-ui-bootstrap/
+ * Inspired by Semantic UI
+ *
+ * Copyright 2016 cbl-web.com
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@import url('../mixin.less');
+
+.card,.cards,.cards>.card{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox}
+.card:after,.card>.content:after,.cards:after,.cards>.card>.content:after{content:' ';overflow:hidden;visibility:hidden;clear:both}
+.card,.cards>.card{max-width:100%;position:relative;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:0;background:#fff;padding:0;border:none;border-radius:.28571429rem;box-shadow:0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;-webkit-transition:box-shadow .1s ease,-webkit-transform .1s ease;transition:box-shadow .1s ease,transform .1s ease;z-index:''; margin-bottom: 30px;
+  a{cursor:pointer}
+  &:after{display:block;height:0}
+  &:first-child{border-radius:.28571429rem .28571429rem 0 0!important;border-top:none!important}
+  &:last-child{border-radius:0 0 .28571429rem .28571429rem!important}
+  &:only-child{border-radius:.28571429rem!important}
+  >.card-image{position:relative;display:block;-webkit-box-flex:0;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;padding:0;background:rgba(0,0,0,.05);
+    >img{display:block;width:100%;height:auto;border-radius:inherit}
+    //&:not()>img{border:none}
+  }
+  >.card-content{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;border:none;border-top:1px solid rgba(34,36,38,.1);background:0 0;margin:0;padding:1em;box-shadow:none;font-size:1em;border-radius:0;
+    &:after{display:block;height:0}
+    >.card-header{display:block;margin:'';font-family:Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;color:rgba(0,0,0,.85);
+      //&:not(){font-weight:700;font-size:1.28571429em;margin-top:-.21425em;line-height:1.2857em}
+    }
+    >.card-header,>.card-meta {
+      +.card-description{margin-top:.5em}
+    }
+    >.card-description{clear:both;color:rgba(0,0,0,.68)}
+    p{margin:0 0 .5em}
+    p:last-child{margin-bottom:0}
+    /*
+    a:not(){color:'';-webkit-transition:color .1s ease;transition:color .1s ease;
+      &:hover{color:''}
+    }*/
+    >a.card-header{color:rgba(0,0,0,.85);
+      &:hover{color:#1e70bf}
+    }
+    .card-btn {
+      .btn { border-radius: 0; margin-left: -1px;
+        &:first-child { border-radius: 4px 0 0 4px; margin: 0; }
+        &:last-child { border-radius: 0 4px 4px 0; }
+      }
+    }
+  }
+  .card-content img{display:inline-block;vertical-align:middle;width:''}
+  .card-avatar img,img.card-avatar,{width:2em;height:2em;border-radius:500rem}
+  .card-meta{font-size:1em;color:rgba(0,0,0,.4);
+    *{margin-right:.3em}
+    :last-child{margin-right:0}
+    &.pull-right {margin-right:0;margin-left:.3em;}
+    /*
+    >a:not(){color:rgba(0,0,0,.4);
+      &:hover{color:rgba(0,0,0,.87)}
+    }*/
+  }
+  >.card-extra{max-width:100%;min-height:0!important;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;border-top:1px solid rgba(0,0,0,.05)!important;position:static;background:0 0;width:auto;margin:0;padding:.75em 1em;top:0;left:0;color:rgba(0,0,0,.4);box-shadow:none;-webkit-transition:color .1s ease;transition:color .1s ease}
+}
+.card.card-link, a.card{ cursor:pointer;.transform(none);
+  &:hover { .transform(translateY(-3px)); }
+}
+
+
+.-each(@name) {
+  @this-color-name: 'color-@{name}';
+  .card {
+    .card.card-@{name} {
+      background-color: @@this-color-name; color: #FFF;
+      a { color: #FFF; }
+    }
+  }
+}
