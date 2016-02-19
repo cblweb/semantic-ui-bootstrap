@@ -32,6 +32,8 @@ var langText = {
         Ribbon: 'Ribbon',
         Attached: 'Attached',
         Card: 'Card',
+        'Checkbox': 'Checkbox',
+        'switch': 'Switch',
         Divider: 'Divider',
         HorizontalDivider: 'Horizontal Divider',
         ButtonDivider: 'Button Divider',
@@ -85,13 +87,17 @@ var langText = {
         RevealRotate: 'RevealRotate',
         RevealDim: 'Reveal Dim',
         RevealDimWhite: 'Reveal Dim (white)',
+        radioDesc: 'Radio input can be styled by the class <code>radio-s</code> (Pure css)',
+        checkDesc: 'Checkbox input can be styled by the class <code>checkbox-s</code> (Pure css)',
+        switchDesc: 'Checkbox can be styled as a switch',
+        switchLineDesc: 'Switch has another style, add the class <code>switch-line</code> to a switch checkbox.',
         dividerDesc: 'A divider divide two block of content, add class <code>bs-divider</code> to turn an element to a horizontal divider.',
         Or: 'Or',
         titleDividerDesc: 'A divider can act as a heading.',
         dividerAsHeading: 'Divider can act as a heading',
         buttonDividerDesc: 'Add class <code>btn-divided</code> to a button group and add <code>&lt;i data-text="or">&lt;/i></code> inside to act as the divider, you can define custom text by <code>data-text</code>.',
         sidebarDesc: '<p>SMTB didn\'t add js code to the package, you need to control the sidebar by add/remove class.</p> \
-                        <p>There are two type of sidebar available:<br>- <a href="../component#sidebar-body">Body Sidebar</a><br>- <a href="../component#sidebar-inner">Inner Sidebar</a></p> \
+                        <p>There are two type of sidebar available:<br>- <a href="../component.html#sidebar-body">Body Sidebar</a><br>- <a href="../component.html#sidebar-inner">Inner Sidebar</a></p> \
                         <p>Add below code to allow dismiss on the click and touch event on sidebar overlay.</p>',
         bodySidebarDesc: '<p>Add <code>sidebar-right</code> to show the sidebar in the right side, otherwise, remove it (same in inner sidebar).</p> \
                         <p>Use <code>dropdown</code> to make hidden submenu, don\'t use it if you want to show it anytime (same in inner sidebar).</p> \
@@ -145,6 +151,8 @@ var langText = {
         Ribbon: '緞帶',
         Attached: '黏附',
         Card: '卡片',
+        'Checkbox': '核取方塊',
+        'switch': '開關',
         Divider: '分隔線',
         HorizontalDivider: '水平分隔線',
         ButtonDivider: '按鈕分隔線',
@@ -198,13 +206,17 @@ var langText = {
         RevealRotate: '旋轉切換',
         RevealDim: '變暗遮罩',
         RevealDimWhite: '變暗遮罩（白色）',
+        radioDesc: 'Radio可以用<code>radio-s</code>類別美化(純CSS)',
+        checkDesc: 'Checkbox可以<code>checkbox可以-s</code>類別美化(純CSS)',
+        switchDesc: 'Checkbox可以顯示成一個開關的樣式',
+        switchLineDesc: '開關還有另一款樣式，在開關增加<code>switch-line</code>類別便可',
         dividerDesc: '分隔線用於分隔兩個不同區塊的內容，在物件增加<code>bs-divider</code>以將其變成一條分隔線',
         Or: '或',
         titleDividerDesc: '分隔線也可以作為標題的形式存在。',
         dividerAsHeading: '分隔線可以是一個標題',
         buttonDividerDesc: '在<code>btn-group</code>增加<code>btn-divided</code>類別並且在當中的按鈕與按鈕之間加上<code>&lt;i data-text="or">&lt;/i></code>以制作按鈕分隔線，你可以用<code>data-text</code>自定義要顯示的文字。',
         sidebarDesc: '<p>SMTB是一個純CSS合集，沒有加上javascript的控制，因此你需要自行在側邊欄上用js增加/移除類別以切換顯示狀態。</p> \
-                        <p>SMTB提供兩種側邊欄<br>- <a href="../component#sidebar-body">主體側邊欄</a><br>- <a href="../component#sidebar-inner">內文側邊欄</a></p> \
+                        <p>SMTB提供兩種側邊欄<br>- <a href="../component.html#sidebar-body">主體側邊欄</a><br>- <a href="../component.html#sidebar-inner">內文側邊欄</a></p> \
                         <p>你需要在Document Ready時增加以下的js程式碼以令用戶在點按遮罩時關閉側邊欄。</p>',
         bodySidebarDesc: '<p>在側邊欄增加類別<code>sidebar-right</code>以將其改到右邊彈出，否則請移除<code>sidebar-right</code>。（內頁側邊欄也一樣）</p> \
                         <p>利用<code>dropdown</code>以制作下拉式菜單，如要固定顯示所有菜單內容則不要用<code>dropdown</code>。（內頁側邊欄也一樣）</p> \

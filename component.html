@@ -77,6 +77,13 @@
                             </ul>
                         </li>
                         <li><a href="#card">{{lang.Card}}</a></li>
+                        <li><a href="#Checkbox">{{lang.Checkbox}}</a>
+                            <ul class="nav">
+                                <li><a href="#radio">Radio</a></li>
+                                <li><a href="#checkbox">Checkbox</a></li>
+                                <li><a href="#switch">{{lang.switch}}</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#divider">{{lang.Divider}}</a>
                             <ul class="nav">
                                 <li><a href="#horizontal-divider">{{lang.HorizontalDivider}}</a></li>
@@ -1429,6 +1436,136 @@
                         </pre>
                     </figure>
 
+                    <h1 id="Checkbox">{{lang.Checkbox}}</h1>
+                    <h2 id="radio">Radio</h2>
+                    <p ng-bind-html-unsafe="lang.radioDesc"></p>
+                    <div class="bs-example">
+                        <div class="radio-s">
+                            <input id="r1-1" type="radio" name="r1" value="1">
+                            <label for="r1-1">Semantic UI</label>
+                        </div>
+                        <div class="radio-s">
+                            <input id="r1-2" type="radio" name="r1" value="2">
+                            <label for="r1-2">Bootstrap</label>
+                        </div>
+                        <div class="radio-s">
+                            <input id="r1-3" type="radio" name="r1" value="3" checked>
+                            <label for="r1-3">SMTB</label>
+                        </div>
+                        <div class="radio-s disabled">
+                            <input id="r1-4" type="radio" name="r1" value="4" disabled>
+                            <label for="r1-4">Foundation</label>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="radio-s">
+    &lt;input id="r1-1" type="radio" name="r1" value="1">
+    &lt;label for="r1-1">Semantic UI&lt;/label>
+&lt;/div>
+&lt;div class="radio-s">
+    &lt;input id="r1-2" type="radio" name="r1" value="2">
+    &lt;label for="r1-2">Bootstrap&lt;/label>
+&lt;/div>
+&lt;div class="radio-s">
+    &lt;input id="r1-3" type="radio" name="r1" value="3" checked>
+    &lt;label for="r1-3">SMTB&lt;/label>
+&lt;/div>
+&lt;div class="radio-s disabled">
+    &lt;input id="r1-4" type="radio" name="r1" value="4" disabled>
+    &lt;label for="r1-4">Foundation&lt;/label>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <h2 id="checkbox">Checkbox</h2>
+                    <p ng-bind-html-unsafe="lang.checkboxDesc"></p>
+                    <div class="bs-example">
+                        <div class="checkbox-s">
+                            <input id="c1-1" type="checkbox" name="c1[]" value="1">
+                            <label for="c1-1">Semantic UI</label>
+                        </div>
+                        <div class="checkbox-s">
+                            <input id="c1-2" type="checkbox" name="c1[]" value="2">
+                            <label for="c1-2">Bootstrap</label>
+                        </div>
+                        <div class="checkbox-s">
+                            <input id="c1-3" type="checkbox" name="c1[]" value="3" checked>
+                            <label for="c1-3">SMTB</label>
+                        </div>
+                        <div class="checkbox-s disabled">
+                            <input id="c1-4" type="checkbox" name="c1" value="4" disabled>
+                            <label for="c1-4">Foundation</label>
+                        </div>
+                        <div class="checkbox-s">
+                            <input id="c1-5" type="checkbox" name="c1" value="5">
+                            <label for="c1-5">Intermedia</label>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="checkbox-s">
+    &lt;input id="c1-1" type="checkbox" name="c1[]" value="1">
+    &lt;label for="c1-1">Semantic UI&lt;/label>
+&lt;/div>
+&lt;div class="checkbox-s">
+    &lt;input id="c1-2" type="checkbox" name="c1[]" value="2">
+    &lt;label for="c1-2">Bootstrap&lt;/label>
+&lt;/div>
+&lt;div class="checkbox-s">
+    &lt;input id="c1-3" type="checkbox" name="c1[]" value="3" checked>
+    &lt;label for="c1-3">SMTB&lt;/label>
+&lt;/div>
+&lt;div class="checkbox-s disabled">
+    &lt;input id="c1-4" type="checkbox" name="c1" value="4" disabled>
+    &lt;label for="c1-4">Foundation&lt;/label>
+&lt;/div>
+&lt;div class="checkbox-s">
+    &lt;input id="c1-5" type="checkbox" name="c1" value="5">
+    &lt;&lt;label for="c1-5">Intermedia&lt;/label>
+&lt;/div>
+
+&lt;script>$('#c1-5').prop('indeterminate',true);&lt;/script>
+</code>
+                        </pre>
+                    </figure>
+                    <h2 id="switch">{{lang.switch}}</h2>
+                    <p ng-bind-html-unsafe="lang.switchDesc"></p>
+                    <div class="bs-example">
+                        <div class="switch">
+                            <input id="s1" type="checkbox" name="s1" value="1">
+                            <label for="s1">I agree the terms and conditions</label>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="switch">
+    &lt;input id="s1" type="radio" name="s1" value="1">
+    &lt;label for="s1">I agree the terms and conditions&lt;/label>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+                    <p ng-bind-html-unsafe="lang.switchLineDesc"></p>
+                    <div class="bs-example">
+                        <div class="switch switch-line">
+                            <input id="s2" type="checkbox" name="s2" value="1">
+                            <label for="s2">Subscribe to the mainling list</label>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre>
+<code class="language-html" data-lang="html">&lt;div class="switch switch-line">
+    &lt;input id="s2" type="radio" name="s2" value="1">
+    &lt;label for="s2">Subscribe to the mainling list&lt;/label>
+&lt;/div>
+</code>
+                        </pre>
+                    </figure>
+
+
+
+
                     <h1 id="divider" class="page-header">{{lang.Divider}}</h1>
                     <h2 id="horizontal-divider">{{lang.HorizontalDivider}}</h2>
                     <p ng-bind-html-unsafe="lang.dividerDesc"></p>
@@ -1858,6 +1995,7 @@
         $('body,html').animate({scrollTop:$($(this).attr('href')).offset().top-150});
     });
     $('.sidebar-overlay').on('click touchstart',function() { $('.sidebar,.sidebar-container').removeClass('active'); $('body').removeClass('sidebar-active'); });
+    $('#c1-5').prop('indeterminate',true);
 
     if(window.location.hostname!='localhost') {
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

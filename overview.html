@@ -1829,6 +1829,88 @@
           </div>
         </div>
 
+        <div class="bs-docs-section">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="page-header">
+                <h1>Checkbox / Radio / Switch</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bs-docs-section">
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Radio</h3>
+              <div class="bs-component">
+                <div class="radio-s">
+                  <input id="r1-1" type="radio" name="r1" value="1">
+                  <label for="r1-1">Semantic UI</label>
+                </div>
+                <div class="radio-s">
+                  <input id="r1-2" type="radio" name="r1" value="2">
+                  <label for="r1-2">Bootstrap</label>
+                </div>
+                <div class="radio-s">
+                  <input id="r1-3" type="radio" name="r1" value="3" checked>
+                  <label for="r1-3">SMTB</label>
+                </div>
+                <div class="radio-s disabled">
+                  <input id="r1-4" type="radio" name="r1" value="4" disabled>
+                  <label for="r1-4">Foundation</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <h3>Checkbox</h3>
+              <div class="bs-component">
+                <div class="checkbox-s">
+                  <input id="c1-1" type="checkbox" name="c1[]" value="1">
+                  <label for="c1-1">Semantic UI</label>
+                </div>
+                <div class="checkbox-s">
+                  <input id="c1-2" type="checkbox" name="c1[]" value="2">
+                  <label for="c1-2">Bootstrap</label>
+                </div>
+                <div class="checkbox-s">
+                  <input id="c1-3" type="checkbox" name="c1[]" value="3" checked>
+                  <label for="c1-3">SMTB</label>
+                </div>
+                <div class="checkbox-s disabled">
+                  <input id="c1-4" type="checkbox" name="c1" value="4" disabled>
+                  <label for="c1-4">Foundation</label>
+                </div>
+                <div class="checkbox-s">
+                  <input id="c1-5" type="checkbox" name="c1" value="5">
+                  <label for="c1-5">Indeterminate</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <h3>Switch</h3>
+              <div class="bs-component">
+                <div class="switch">
+                  <input id="s1" type="checkbox" name="s1" value="1">
+                  <label for="s1">I agree the terms</label>
+                </div>
+                <div class="switch switch-line">
+                  <input id="s2" type="checkbox" name="s2" value="1">
+                  <label for="s2">Subscribe to newsletter</label>
+                </div>
+                <div class="switch">
+                  <input id="s3" type="checkbox" name="s3" value="1" disabled>
+                  <label for="s3">switch disabled</label>
+                </div>
+                <div class="switch switch-line">
+                  <input id="s4" type="checkbox" name="s4" value="1" disabled>
+                  <label for="s4">switch line disabled</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <div class="bs-docs-section">
           <div class="row">
@@ -2076,6 +2158,8 @@
     $('a[href=#]').attr('href','javascript:;');
     $('[data-toggle=popover]').popover();
     $('[data-toggle=tooltip]').tooltip();
+
+    $('#c1-5').prop('indeterminate',true);
 
     var $button = $("<div id='source-button' class='btn btn-primary btn-xs'>&lt; &gt;</div>").click(function(){
       var html = $(this).parent().html();
