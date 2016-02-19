@@ -50,3 +50,4 @@ main.bs-docs-masthead #footer a:hover { color: #FFF; }
 .bs-docs-header + .container h2 { margin-top: 38px; font-size: 20px; padding: 8px 10px; border-left: 5px solid #3ac0ff; background-color: #F6F6F6; }
 .sidebar-subject { font-family: Lato; font-size: 16px; }
 .sidebar-subject img { position: relative; top: -2px; }
+.bs-docs-sidenav .badge { background-color: #FC7B7B; font-size: 12px; margin-top: -3px; }
