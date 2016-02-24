@@ -1,4 +1,4 @@
-<footer id="footer" class="bs-docs-footer" role="contentinfo">
+<footer class="bs-docs-footer" role="contentinfo">
   <div class="container">
     <ul class="bs-docs-footer-links">
       <li><a href="https://github.com/cblweb/semantic-ui-bootstrap" onclick="ga('send','event','extLink','click','github')">GitHub</a></li>
@@ -10,3 +10,43 @@
     <p>Free Open Source licensed under <a rel="license" href="http://mit-license.org/" target="_blank" onclick="ga('send','event','extLink','click','mit')">MIT</a>.</p>
   </div>
 </footer>
+
+<div class="modal fade" id="donateModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+        <h4 class="modal-title">{{lang.DonateTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">{{lang.DonateDesc}}</p>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">USD</span>
+              <input type="number" id="donateAmount" class="form-control" min="3" ng-model="donateAmt" ng-init="donateAmt=5">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="confirmDonate" onclick="ga('send','event','donate','submit','')">{{lang.ConfirmDonate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="donate-form" method="post" action="https://www.paypal.com/cgi-bin/webscr" class="hide" target="_blank">
+  <input type="hidden" name="button" value="buynow">
+  <input type="hidden" name="business" value="N5AKCQUV5P7AC">
+  <input type="hidden" name="item_name" value="Donate For SMTB">
+  <input type="hidden" name="quantity" value="1">
+  <input type="hidden" name="amount" value="{{donateAmt}}">
+  <input type="hidden" name="currency_code" value="USD">
+  <input type="hidden" name="shipping" value="">
+  <input type="hidden" name="tax" value="">
+  <input type="hidden" name="notify_url" value="http://smtb.cbl-web.com/#thankyou">
+  <input type="hidden" name="cmd" value="_xclick">
+  <input type="hidden" name="env" value="www">
+  <button type="submit" class="btn">Donate</button>
+</form>

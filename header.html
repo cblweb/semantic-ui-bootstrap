@@ -1,4 +1,4 @@
-<div id="header" class="navbar navbar-default navbar-inverse">
+<div class="navbar navbar-default navbar-inverse">
   <div class="container">
     <div class="navbar-header">
       <a href="./" class="navbar-brand" onclick="ga('send','event','intLink','click','home')">SMTB</a>
@@ -22,6 +22,9 @@
     </ul>
     <div class="navbar-right hidden-xs">
       <a class="github-button" href="https://github.com/cblweb/semantic-ui-bootstrap" onclick="ga('send','event','extLink','click','github-top')" data-style="mega" aria-label="View cblweb/semantic-ui-bootstrap on GitHub">View On Github</a>
+    </div>
+    <div class="donate">
+      <a class="btn btn-inverted-white" href="#donateModal" data-toggle="modal" onclick="ga('send','event','donate','open','')" aria-label="Donate SMTB"><i class="fa fa-coffee"></i> {{lang.Donate}}</a>
     </div>
   </div>
 </div>

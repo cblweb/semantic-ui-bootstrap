@@ -40,6 +40,13 @@ h4 { margin-bottom: 10px; margin-top: 30px; }
 #header .navbar { margin: 0; border-radius: 0; }
 .bs-docs-sidebar.affix { margin-top: 20px; }
 #header { position: relative; z-index: 2; }
+.donate { float: right; padding: 11px 10px 0 0; }
+.donate .btn { height: 28px; line-height: 28px; padding-top: 0; padding-bottom: 0; }
+.donate .btn:hover { color: #222; background-color: #FFF !important;}
+@media(max-width: 767px) {
+	.donate { position: absolute; right: 60px; top: 0; }
+}
+#donateModal .modal-dialog { max-width: 380px; }
 main.bs-docs-masthead { position: absolute; left: 0; top: 0; width: 100%; min-height: 100%; padding: 0; background: url('../images/bg.jpg') center bottom; background-size: cover; }
 main.bs-docs-masthead > .container { padding-top: 100px; }
 main.bs-docs-masthead #footer .bs-docs-footer { background-color: transparent; }

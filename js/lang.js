@@ -117,6 +117,11 @@ var langText = {
         AlertColor: 'Alert Color',
         alertColorDesc: '[1] Background-color, [2] border-color, [3] font color',
         finalDesc: 'SMTB designed base on bootstrap 3.3.6, however, it didn\'t merged with the bootstrap soruce, so you can use most version of bootstrap 3 as a base and overide the style by adding SMTB css after bootstrap source css. (i.e. You can use a customized bootstrap package as a base)',
+
+        ConfirmDonate: 'Confirm & Donate',
+        Donate: 'Donate',
+        DonateTitle: 'Donate For SMTB',
+        DonateDesc: 'We need your support for continuous Development'
     },
     zh: {
         title: 'SMTB | Semantic UI Bootstrap - 一個模仿 Semantic UI 的 Bootstrap 主題',
@@ -236,6 +241,11 @@ var langText = {
         AlertColor: '警告框顏色',
         alertColorDesc: '[1] 背景顏色, [2] 框線顏色, [3] 文字顏色',
         finalDesc: 'SMTB 基於 Bootstrap 3.3.6 編寫，然而它並沒有和 Bootstrap 源碼結合在一起，因此你可以使用任何一個 Bootstrap 3 的子版本作為根底，換言之，你可以使用 Bootstrap Customize 服務建立自己適用的 Bootstrap 套件作為基底然後才在後面加上 SMTB。',
+        
+        ConfirmDonate: '確認捐贈',
+        Donate: '捐贈',
+        DonateTitle: '捐助SMTB項目的開發',
+        DonateDesc: '我們需要你的支持以持續開發工作'
     }
 };
 var lang = window.location.hash == '#!zh' ? 'zh' : (localStorage.smtbLang ? localStorage.smtbLang : getLang());
@@ -268,4 +278,10 @@ ngApp.run(function($rootScope) {
         $rootScope.language = l;
         $rootScope.lang = langText[l];
     };
+});
+
+$(document).ready(function() {
+    $('#confirmDonate').click(function() {
+        $('#donate-form').submit();
+    });
 });
