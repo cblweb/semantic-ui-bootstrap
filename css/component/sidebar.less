@@ -1,8 +1,8 @@
 @import url('../mixin.less');
 
-.sidebar { position: absolute; width: 250px; height: 100%; z-index: 10001; visibility: hidden;
+.sidebar { position: absolute; width: @sidebar-width; height: 100%; z-index: 10001; visibility: hidden;
   body > & { position: fixed; top: 0; }
-  .sidebar-wrap { width: 100%; height: 100%; overflow-y: auto; .transform(translateX(-100%)); .transition(0.38s,ease,all); background-color: #222; color: #FFF; .box-shadow(0 2px 6px rgba(0,0,0,0.5));
+  .sidebar-wrap { width: 100%; height: 100%; overflow-y: auto; .transform(translateX(-@sidebar-width)); .transition(0.38s,ease,all); background-color: #222; color: #FFF; .box-shadow(0 2px 6px rgba(0,0,0,0.5));
     .sidebar-subject { padding: 20px 15px; }
     > ul > li { border-top: 1px solid rgba(255,255,255,0.08);
       &:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -32,7 +32,7 @@
     }
   }
   &.sidebar-right { right: 0;
-    .sidebar-wrap { .transform(translateX(100%)); }
+    .sidebar-wrap { .transform(translateX(@sidebar-width)); }
   }
   &.active, .sidebar-container.active > & { visibility: visible;
     .sidebar-wrap {.transform(translateX(0));}
@@ -56,8 +56,8 @@
 .sidebar-container.active { overflow-y: hidden; }
 .sidebar-active { overflow: hidden; }
 .sidebar-push > .sidebar-dim { position: relative; .transition(0.38s,ease,all); .transform(translateX(0)); }
-.sidebar-container.sidebar-push.active > .sidebar ~ .sidebar-dim { width: 100%; height: 100%; .transform(translateX(250px)); }
-.sidebar-container.sidebar-push.active > .sidebar.sidebar-right ~ .sidebar-dim { .transform(translateX(-250px)); }
+.sidebar-container.sidebar-push.active > .sidebar ~ .sidebar-dim { width: 100%; height: 100%; .transform(translateX(@sidebar-width)); }
+.sidebar-container.sidebar-push.active > .sidebar.sidebar-right ~ .sidebar-dim { .transform(translateX(-@sidebar-width)); }
 
 
 .-each(@name) { }

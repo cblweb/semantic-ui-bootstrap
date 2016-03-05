@@ -1,6 +1,6 @@
 /*!
  * # SMTB - Semantic UI Bootstrap
- * Version v3.1.0
+ * Version v3.1.1
  * http://github.com/cblweb/semantic-ui-bootstrap/
  * Inspired by Semantic UI
  *
@@ -321,11 +321,11 @@ a, .btn-link { color: darken(@color-primary,20%);
 	&:before { content: ''; display: inline-block; width: 8px; }
 	&:first-child:before { width: 0; }
 	&:last-child:after { width: 0; }
-	+ i[data-text] {
-		width: 3px; height: 100%; background-color: #FFF; margin: 0; padding: 0; float: left;
-		display: inline-block; font-size: 12px; font-weight: bold; font-style: normal; text-align: center; position: absolute; z-index: 3;
+	i[data-text] {
+		width: 3px; height: 100%; background-color: #FFF; margin: 0; padding: 0; position: absolute; top: 0; right: -1.5px;
+		font-size: 12px; font-weight: bold; font-style: normal; text-align: center; z-index: 3;
 	}
-	+ i[data-text]:after {
+	i[data-text]:after {
 		content: attr(data-text); border-radius: 50%; background-color: #FFF; position: absolute; top: 50%; left: 50%;
 		z-index: 4; width: 24px; height: 24px; line-height: 24px; color: #666; margin-top: -12px; margin-left: -12px;
 	}
