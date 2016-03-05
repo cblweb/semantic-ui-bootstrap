@@ -24,6 +24,7 @@ SMTB is a Bootstrap theme and component collections inspired by Semantic UI. It 
     * Attached
 * Card
 * Divider
+* Styled checkbox, radio and switch (an on off checkbox)
 * Sidebar
 
 Label, Card, Divider and Sidebar can be used as a plugin independently.
