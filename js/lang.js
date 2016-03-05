@@ -95,7 +95,7 @@ var langText = {
         Or: 'Or',
         titleDividerDesc: 'A divider can act as a heading.',
         dividerAsHeading: 'Divider can act as a heading',
-        buttonDividerDesc: 'Add class <code>btn-divided</code> to a button group and add <code>&lt;i data-text="or">&lt;/i></code> inside to act as the divider, you can define custom text by <code>data-text</code>.',
+        buttonDividerDesc: 'Add class <code>btn-divided</code> to a button group and append <code>&lt;i data-text="or">&lt;/i></code> in the button to act as the divider, you can define custom text by <code>data-text</code>.',
         sidebarDesc: '<p>SMTB didn\'t add js code to the package, you need to control the sidebar by add/remove class.</p> \
                         <p>There are two type of sidebar available:<br>- <a href="../component.html#sidebar-body">Body Sidebar</a><br>- <a href="../component.html#sidebar-inner">Inner Sidebar</a></p> \
                         <p>Add below code to allow dismiss on the click and touch event on sidebar overlay.</p>',
@@ -116,6 +116,7 @@ var langText = {
         BrandColor: 'Brand Color',
         AlertColor: 'Alert Color',
         alertColorDesc: '[1] Background-color, [2] border-color, [3] font color',
+        sidebarWidth: 'Sidebar Width',
         finalDesc: 'SMTB designed base on bootstrap 3.3.6, however, it didn\'t merged with the bootstrap soruce, so you can use most version of bootstrap 3 as a base and overide the style by adding SMTB css after bootstrap source css. (i.e. You can use a customized bootstrap package as a base)',
 
         ConfirmDonate: 'Confirm & Donate',
@@ -219,7 +220,7 @@ var langText = {
         Or: '或',
         titleDividerDesc: '分隔線也可以作為標題的形式存在。',
         dividerAsHeading: '分隔線可以是一個標題',
-        buttonDividerDesc: '在<code>btn-group</code>增加<code>btn-divided</code>類別並且在當中的按鈕與按鈕之間加上<code>&lt;i data-text="or">&lt;/i></code>以制作按鈕分隔線，你可以用<code>data-text</code>自定義要顯示的文字。',
+        buttonDividerDesc: '在<code>btn-group</code>增加<code>btn-divided</code>類別並且在按鈕文字的後面加上<code>&lt;i data-text="or">&lt;/i></code>以制作按鈕分隔線，你可以用<code>data-text</code>自定義要顯示的文字。',
         sidebarDesc: '<p>SMTB是一個純CSS合集，沒有加上javascript的控制，因此你需要自行在側邊欄上用js增加/移除類別以切換顯示狀態。</p> \
                         <p>SMTB提供兩種側邊欄<br>- <a href="../component.html#sidebar-body">主體側邊欄</a><br>- <a href="../component.html#sidebar-inner">內文側邊欄</a></p> \
                         <p>你需要在Document Ready時增加以下的js程式碼以令用戶在點按遮罩時關閉側邊欄。</p>',
@@ -240,6 +241,7 @@ var langText = {
         BrandColor: '主題顏色',
         AlertColor: '警告框顏色',
         alertColorDesc: '[1] 背景顏色, [2] 框線顏色, [3] 文字顏色',
+        sidebarWidth: '側邊欄寬度',
         finalDesc: 'SMTB 基於 Bootstrap 3.3.6 編寫，然而它並沒有和 Bootstrap 源碼結合在一起，因此你可以使用任何一個 Bootstrap 3 的子版本作為根底，換言之，你可以使用 Bootstrap Customize 服務建立自己適用的 Bootstrap 套件作為基底然後才在後面加上 SMTB。',
         
         ConfirmDonate: '確認捐贈',

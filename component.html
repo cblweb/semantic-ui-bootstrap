@@ -1507,7 +1507,7 @@
                             <input id="c1-3" type="checkbox" name="c1[]" value="3" checked>
                             <label for="c1-3">SMTB</label>
                         </div>
-                        <div class="checkbox-s disabled">
+                        <div class="checkbox-s">
                             <input id="c1-4" type="checkbox" name="c1" value="4" disabled>
                             <label for="c1-4">Foundation</label>
                         </div>
@@ -1530,7 +1530,7 @@
     &lt;input id="c1-3" type="checkbox" name="c1[]" value="3" checked>
     &lt;label for="c1-3">SMTB&lt;/label>
 &lt;/div>
-&lt;div class="checkbox-s disabled">
+&lt;div class="checkbox-s">
     &lt;input id="c1-4" type="checkbox" name="c1" value="4" disabled>
     &lt;label for="c1-4">Foundation&lt;/label>
 &lt;/div>
@@ -1614,30 +1614,24 @@
                     <p ng-bind-html-unsafe="lang.buttonDividerDesc"></p>
                     <div class="bs-example">
                         <div class="btn-group btn-divided">
-                            <a href="#" class="btn btn-lg btn-primary">Great</a>
-                            <i data-text="or"></i>
-                            <a href="#" class="btn btn-lg btn-info">General</a>
-                            <i data-text="or"></i>
+                            <a href="#" class="btn btn-lg btn-primary">Great<i data-text="or"></i></a>
+                            <a href="#" class="btn btn-lg btn-info">General<i data-text="or"></i></a>
                             <a href="#" class="btn btn-lg btn-warning">Bad</a>
                         </div>
                         <div class="btn-group btn-divided">
-                            <a href="#" class="btn btn-success">Allow</a>
-                            <i data-text="或"></i>
+                            <a href="#" class="btn btn-success">Allow<i data-text="或"></i></a>
                             <a href="#" class="btn btn-danger">Disable</a>
                         </div>
                     </div>
                     <figure class="highlight">
                         <pre>
 <code class="language-html" data-lang="html">&lt;div class="btn-group btn-divided">
-    &lt;a href="#" class="btn btn-lg btn-primary">Great&lt;/a>
-    &lt;i data-text="or">&lt;/i>
-    &lt;a href="#" class="btn btn-lg btn-info">General&lt;/a>
-    &lt;i data-text="or">&lt;/i>
+    &lt;a href="#" class="btn btn-lg btn-primary">Great&lt;i data-text="or">&lt;/i>&lt;/a>
+    &lt;a href="#" class="btn btn-lg btn-info">General&lt;i data-text="or">&lt;/i>&lt;/a>
     &lt;a href="#" class="btn btn-lg btn-warning">Bad&lt;/a>
 &lt;/div>
 &lt;div class="btn-group btn-divided">
-    &lt;a href="#" class="btn btn-success">Allow&lt;/a>
-    &lt;i data-text="或">&lt;/i>
+    &lt;a href="#" class="btn btn-success">Allow&lt;i data-text="或">&lt;/i>&lt;/a>
     &lt;a href="#" class="btn btn-danger">Disable&lt;/a>
 &lt;/div>
 </code>
@@ -1938,6 +1932,10 @@
                         <tr><td>@alert-color-success</td><td>Default: #FCFFF5, #A3C293, #2c662d</td></tr>
                         <tr><td>@alert-color-danger</td><td>Default: #FFF6F6, #E0B4B4, #9F3A38</td></tr>
                         <tr><td>@alert-color-warning</td><td>Default: #FFFAF3, #C9BA9B, #573a08</td></tr>
+                    </table>
+                    <h3>{{lang.sidebarWidth}}</h3>
+                    <table class="table table-bordered table-striped">
+                        <tr><td>@sidebarWidth</td><td>Default: 250px</td></tr>
                     </table>
                     
                     <p ng-bind-html-unsafe="lang.finalDesc"></p>
