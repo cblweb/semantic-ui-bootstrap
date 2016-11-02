@@ -58,3 +58,4 @@ main.bs-docs-masthead #footer a:hover { color: #FFF; }
 .sidebar-subject { font-family: Lato; font-size: 16px; }
 .sidebar-subject img { position: relative; top: -2px; }
 .bs-docs-sidenav .badge { background-color: #FC7B7B; font-size: 12px; margin-top: -3px; }
+#radiogroup ~ .bs-example .btn-group, #checkboxgroup ~ .bs-example .btn-group { display: block; min-height: 34px; }
