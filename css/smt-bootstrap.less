@@ -1,6 +1,6 @@
 /*!
  * # SMTB - Semantic UI Bootstrap
- * Version v3.1.1
+ * Version v3.1.2
  * http://github.com/cblweb/semantic-ui-bootstrap/
  * Inspired by Semantic UI
  *
@@ -72,7 +72,7 @@ a, .btn-link { color: darken(@color-primary,20%);
 }
 
 .-each(@name) {
-	.btn-group .btn-@{name} + .dropdown-menu > li > a {
+	.btn-group .btn-@{name} ~ .dropdown-menu > li > a {
 		@this-color-name: 'color-@{name}';
 		&:hover,&:focus { background-color: @@this-color-name; color: #FFF; }
 	}

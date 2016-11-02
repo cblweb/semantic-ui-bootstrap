@@ -6,7 +6,7 @@
 		&:before { content: ''; position: absolute; top: 1px; left: 0; width: 17px; height: 17px; border: 1px solid #d4d4d5; .transition; }
 	}
 	&:hover label:before { border-color: #999; }
-	&.disabled > label, input:disabled + label { color: #999; cursor: no-drop;
+	&.disabled > label, input[disabled] + label { color: #999; cursor: no-drop;
 		&:before { opacity: 0.7; border-color: #d4d4d5; }
 		&:after { opacity: 0.7; }
 	}
@@ -55,7 +55,7 @@
 		&:before { background-color: @color-primary !important; }
 		&:after { left: 31px; }
 	}
-	&.disabled > label, input:disabled + label { color: #999;
+	&.disabled > label, input[disabled] + label { color: #999;
 		&:before { background-color: rgba(0,0,0,.05); }
 		&:after, &:before { opacity: 0.8; }
 	}
@@ -66,4 +66,23 @@
 	}
 }
 
-.-each(@name) { }
+.radio-group, .checkbox-group {
+	input { display: none; }
+	.btn { background-color: #EEE; color: #333;
+		&:first-of-type { border-radius: 4px 0 0 4px !important; }
+		&:hover { background-color: #DDD; }
+	}
+	input {
+		&:checked + .btn { background-color: @color-primary; color: #FFF; }
+		&.disabled, &[disabled] {
+			+ .btn { cursor: no-drop !important; opacity: 0.8; }
+		}
+	}
+}
+
+.-each(@name) {
+	@this-color-name: 'color-@{name}';
+	.radio-group.radio-group-@{name}, .checkbox-group.checkbox-group-@{name} {
+		input:checked + .btn { background-color: @@this-color-name; color: #FFF; }
+	}
+}
