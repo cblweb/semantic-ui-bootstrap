@@ -107,10 +107,12 @@ a, .btn-link { color: darken(@color-primary,20%);
 
 
 //************** Button ******************
+
 .btn { border: 0; .transition(); padding: 7px 12px; line-height: 20px;
 	[class*=btn-icon] { display: inline-block; margin: -7px 12px; padding: 7px 12px; line-height: 20px; background-color: rgba(0,0,0,.08); }
 	.btn-icon-left { margin-left: -12px; }
 	.btn-icon-right { margin-right: -12px; }
+    
 }
 .btn-xs { padding: 2px 5px;
 	[class*=btn-icon] { margin: -2px 5px; padding: 2px 5px; }
@@ -163,6 +165,36 @@ a, .btn-link { color: darken(@color-primary,20%);
 .btn.btn-inverted-white-fill { font-weight: bold; .box-shadow(0 0 0 2px #FFF inset); color: #FFF; background-color: transparent; }
 .btn-bold { font-weight: 600; }
 .btn-circular { border-radius: 50%; }
+
+/* animated buttons */
+.btn.btn-animated { position: relative; overflow: hidden; padding-right: 0em !important; vertical-align: middle; z-index: 1;
+    .visible-content { position: relative; margin-right: 1.5em;}
+    .hidden-content { position: absolute; width: 100%;}
+}
+/* animated buttons horizontal */
+.btn.btn-animated.btn-animated-horizontal {
+    .visible-content,.hidden-content { transition: right 0.3s ease 0s;}
+    .visible-content { left: auto; right: 0%;}
+    .hidden-content { vertical-align: center; left: auto; right: -100%; top:7px;}
+    &:hover .visible-content { left: auto; right: 200%; }
+    &:hover .hidden-content { left: auto; right: 0%;}
+}
+/* animated buttons vertical */
+.btn.btn-animated.btn-animated-vertical{
+    .visible-content,.hidden-content{transition: top 0.3s ease; transition: top 0.3s ease, transform 0.3s ease; transition: top 0.3s ease, transform 0.3s ease;}
+    .visible-content { transform: translateY(0%); right: auto;}
+    .hidden-content { top: -50%; left: 0%; right: auto;} 
+    &:hover .visible-content { transform: translateY(200%); right: auto;}
+    &:hover .hidden-content { top: 7px; right: auto;}
+}
+/* animated buttons fade */
+.btn.btn-animated.btn-animated-fade{
+    .visible-content,.hidden-content{transition: opacity 0.3s ease; transition: opacity 0.3s ease, transform 0.3s ease; transition: opacity 0.3s ease, transform 0.3s ease;}
+	.visible-content { left: auto;  right: auto;  opacity: 1;  transform: scale(1);}
+	.hidden-content { opacity: 0; left: 0%; right: auto; transform: scale(1.5); top:7px}
+    &:hover .visible-content { left: auto; right: auto; opacity: 0; transform: scale(0.75);}
+    &:hover .hidden-content { left: 0%; right: auto; opacity: 1; transform: scale(1);}
+} 
 
 //*********** Table ************
 .-each(@name) {

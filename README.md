@@ -13,6 +13,7 @@ SMTB is a Bootstrap theme and component collections inspired by Semantic UI. It 
 [http://smtb.cbl-web.com/component.html](http://smtb.cbl-web.com/component.html)
 
 ## What added
+* Animated Button
 * Outlined Button (Ghost Button)
 * Dropdown Submenu
 * Material Tabs
